@@ -4,10 +4,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CourseModule } from './course/course.module';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SidebarComponent, MatSidenavModule, RouterOutlet],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, MatSidenavModule, CourseModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
