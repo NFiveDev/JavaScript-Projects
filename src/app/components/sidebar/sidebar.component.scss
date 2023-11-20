@@ -1,13 +1,15 @@
-$width-padding: 10px;
-
+$width-padding: 20px;
+$icon-color: #81C784;
+$router-link-color: #455A64;
 .sidebar-container {
-  padding-left: $width-padding;
-  padding-right: $width-padding;
+  
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
 .logo-container {
+  padding-left: $width-padding;
+  padding-right: $width-padding;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -24,3 +26,32 @@ $width-padding: 10px;
 .nav-link-list-wrapper {
   
 }
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+
+  span {
+    color: $router-link-color;
+  }
+}
+
+.is-active {
+  span {
+    color: #29B6F6;
+  }
+  
+}
+
+
+.material-symbols-rounded {
+  color: $icon-color;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
