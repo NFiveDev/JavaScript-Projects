@@ -7,12 +7,31 @@
 
     <div class="nav-link-list-wrapper">
         <mat-nav-list>
-            <mat-list-item style="padding-left: 2rem;">
-                <a routerLink="/course" routerLinkActive="is-active" class="nav-link">
-                    <mat-icon fontSet="material-symbols-rounded">home</mat-icon>
-                    <span>home</span>
+            <mat-list-item>
+                <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
+                    <mat-icon matListItemIcon fontSet="material-symbols-rounded">home</mat-icon>
+                    <span >home</span>
                 </a>
             </mat-list-item>
+            <mat-list-item>
+                <a routerLink="/course" routerLinkActive="is-active" class="nav-link">
+                    <mat-icon matListItemIcon fontSet="material-symbols-rounded">home</mat-icon>
+                    <span >course</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a routerLink="/about" routerLinkActive="is-active" class="nav-link">
+                    <mat-icon matListItemIcon fontSet="material-symbols-rounded">home</mat-icon>
+                    <span >about</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a routerLink="/contact" routerLinkActive="is-active" class="nav-link">
+                    <mat-icon matListItemIcon fontSet="material-symbols-rounded">home</mat-icon>
+                    <span>contact</span>
+                </a>
+            </mat-list-item>
+            
         </mat-nav-list>
     </div>
 </div>

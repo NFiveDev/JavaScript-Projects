@@ -5,11 +5,12 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CourseModule } from './course/course.module';
+import { CoreModule } from './core/core.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SidebarComponent, MatSidenavModule, CourseModule, RouterOutlet],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, MatSidenavModule, CourseModule, CoreModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
