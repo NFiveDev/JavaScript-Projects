@@ -1,8 +1,15 @@
 <div class="search-wrapper">
   <button class="search-btn">
     <div class="btn-container">
-      <p>{{placeholder}}</p>
-      <mat-icon class="command-key-logo" fontSet="material-symbols-rounded">keyboard_command_key</mat-icon>
+      <span class="placeholder">{{placeholder}}</span>
+      <div class="logo-wrapper">
+        @if(isWindows){
+          <span>CTRL</span>
+        } @else {
+          <mat-icon class="command-key-logo" fontSet="material-symbols-rounded">keyboard_command_key</mat-icon>
+        }
+        <span>  K</span>
+      </div>
     </div>
   </button>
 </div>
