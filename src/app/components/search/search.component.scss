@@ -1,0 +1,25 @@
+.search-btn {
+  background-color: white;
+  border: 0 solid #e5e7eb;
+  border-radius: 10px;
+  border: 2px solid #CFD8DC;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  margin: 0.1rem;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.btn-container {
+  font-weight: 600;
+  font-size:small;
+  color: #B0BEC5;
+  display: flex;
+  gap: 20px;  
+}
