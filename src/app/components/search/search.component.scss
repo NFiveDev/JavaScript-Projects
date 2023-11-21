@@ -5,8 +5,8 @@
   border: 2px solid #CFD8DC;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
   margin: 0.1rem;
 }
 
@@ -22,4 +22,9 @@
   color: #B0BEC5;
   display: flex;
   gap: 20px;  
+  align-items: center;
+}
+
+.command-key-logo {
+  font-size: 24px;
 }
