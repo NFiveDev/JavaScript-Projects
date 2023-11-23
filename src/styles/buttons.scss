@@ -1,0 +1,10 @@
+@import './colors.scss';
+
+.button-color-wrapper .mat-success {
+    background-color: green;
+
+    .mdc-button__label {
+        color: white;
+    }
+    
+}
