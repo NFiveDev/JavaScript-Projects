@@ -1,0 +1,32 @@
+@import './breakpoints.scss';
+
+$container-padding-vertical: 20px;
+
+
+.container {
+  padding-left: $container-padding-vertical;
+  padding-right: $container-padding-vertical;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section-spacer-top {
+  padding-top: 20px;
+}
+
+.section-spacer-bottom {
+  padding-bottom: 20px;
+}
+
+
+@media (min-width: $mobile) {
+  
+}
+
+@media (min-width: $ipad) {
+  
+}
+
+@media (min-width: $desktop) {
+  
+}
