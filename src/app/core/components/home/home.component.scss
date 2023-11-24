@@ -1,9 +1,13 @@
 .wrapper {
     h1 {
         color: white;
+        margin-block-start: 0.2em;
+        margin-block-end: 0.2em;
     }
-    h2 {
+    h4 {
+        font-weight: 400;
         color: #d1d5db;
+        margin-block-start: 0.2em;
     }
 
     .hero-actions {
@@ -14,6 +18,8 @@
 
 .hero-container {
     padding: 7rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .bg-blue-light {
