@@ -1,10 +1,13 @@
 @import './colors.scss';
 
-.button-color-wrapper .mat-success {
-    background-color: green;
 
-    .mdc-button__label {
-        color: white;
-    }
-    
-}
+
+.button-color-wrapper {
+    .mat-mdc-unelevated-button:not(:disabled).success {
+        background-color:  getColor('success-500');
+
+        .mdc-button__label {
+            color: white;
+        }
+    } 
+}  
