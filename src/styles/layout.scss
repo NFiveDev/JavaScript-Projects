@@ -1,6 +1,6 @@
 @import './breakpoints.scss';
 
-$container-padding-vertical: 20px;
+$container-padding-vertical: 4rem;
 
 
 .container {
@@ -11,11 +11,11 @@ $container-padding-vertical: 20px;
 }
 
 .section-spacer-top {
-  padding-top: 20px;
+  padding-top: $container-padding-vertical;
 }
 
 .section-spacer-bottom {
-  padding-bottom: 20px;
+  padding-bottom: $container-padding-vertical;
 }
 
 
@@ -28,5 +28,7 @@ $container-padding-vertical: 20px;
 }
 
 @media (min-width: $desktop) {
-  
+  .container {
+    max-width: 1600px;
+  }
 }
