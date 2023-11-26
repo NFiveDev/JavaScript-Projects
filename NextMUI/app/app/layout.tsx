@@ -1,10 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter, Roboto } from 'next/font/google'
 import './globals.css'
 import { Box, Container } from '@mui/material'
 import ThemeRegistry from '@/components/theme/themeRegistry'
-
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from '@/components/navbar'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,7 +22,9 @@ export default function RootLayout({
 
           </Box>
           <Box>
-            <header></header>
+            <header>
+              <Navbar></Navbar>
+            </header>
             <Container>
                 {children}
             </Container>

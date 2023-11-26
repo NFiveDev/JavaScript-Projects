@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -9,49 +11,58 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  alignItems: 'flex-start',
-  paddingTop: theme.spacing(1),
-  paddingBottom: theme.spacing(2),
+const StyledToolbar = styled(Toolbar)(() => ({
+  display: 'flex',
+  justifyContent: 'space-between',
   // Override media queries injected by theme.mixins.toolbar
   '@media all': {
-    minHeight: 128,
+    minHeight: 60,
   },
 }));
 
-export default function ProminentAppBar() {
+const StyledContentBox = styled(Box)(() => ({
+  display: 'flex',
+  alignItems: 'center'
+}))
+
+export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position='static'>
         <StyledToolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
-          >
-            MUI
-          </Typography>
-          <IconButton size="large" aria-label="search" color="inherit">
-            <SearchIcon />
-          </IconButton>
-          <IconButton
-            size="large"
-            aria-label="display more actions"
-            edge="end"
-            color="inherit"
-          >
-            <MoreIcon />
-          </IconButton>
+          <StyledContentBox>
+            <IconButton
+              size='large'
+              edge='start'
+              color='inherit'
+              aria-label='open drawer'
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              variant='h5'
+              noWrap
+              component='div'
+              sx={{ flexGrow: 1, alignSelf: 'center' }}
+            >
+              MUI
+            </Typography>
+          </StyledContentBox>
+
+          <Box>
+            <IconButton size='large' aria-label='search' color='inherit'>
+              <SearchIcon />
+            </IconButton>
+            <IconButton
+              size='large'
+              aria-label='display more actions'
+              edge='end'
+              color='inherit'
+            >
+              <MoreIcon />
+            </IconButton>
+          </Box>
         </StyledToolbar>
       </AppBar>
     </Box>
