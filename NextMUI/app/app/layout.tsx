@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Roboto } from 'next/font/google'
 import './globals.css'
+import { Box, Container } from '@mui/material'
+import ThemeRegistry from '@/components/theme/themeRegistry'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +18,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <ThemeRegistry>
+      <body>
+          <Box>
+
+          </Box>
+          <Box>
+            <header></header>
+            <Container>
+                {children}
+            </Container>
+          </Box>
+      </body>
+      </ThemeRegistry>
+      
     </html>
   )
 }
