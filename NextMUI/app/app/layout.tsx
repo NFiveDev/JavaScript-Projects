@@ -5,6 +5,7 @@ import ThemeRegistry from '@/components/theme/themeRegistry'
 import Navbar from '@/components/navbar'
 import Sidebar, { DRAWER_WIDTH } from '@/components/sidebar'
 import ContentMain from '@/components/wrappers/contentMain'
+import Providers from './context/providers'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,19 +20,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeRegistry>
-        <body>
-          <Box sx={{
-            display: 'flex'
-          }}>
-            <Sidebar />
-            <ContentMain sidebarOpen={true}>
-              <Navbar />
-              {children}
-            </ContentMain>
-          </Box>
-
-
-        </body>
+        <Providers>
+          <body>
+            <Box sx={{
+              display: 'flex'
+            }}>
+              <Sidebar />
+              <ContentMain sidebarOpen={true}>
+                <Navbar />
+                {children}
+              </ContentMain>
+            </Box>
+          </body>
+        </Providers>
       </ThemeRegistry>
     </html>
   )

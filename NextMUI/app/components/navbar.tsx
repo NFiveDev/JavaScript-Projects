@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { useLayoutContext } from '@/app/context/layoutContextProvider';
 
 const StyledToolbar = styled(Toolbar)(() => ({
   display: 'flex',
@@ -25,9 +26,28 @@ const StyledContentBox = styled(Box)(() => ({
   alignItems: 'center'
 }))
 
+const StyledHeader = styled('header')({
+  flexGrow: 1
+}) 
+
 export default function Navbar() {
+  const {open, setOpen} = useLayoutContext();
+
+  const oppositeBooleanValue = (input: boolean) => !input; 
+
+  const sidebarHandler = () => {
+    console.log('called')
+    if(open){
+      console.log(open)
+      const newVal = oppositeBooleanValue(open);
+      console.log("hejsa", newVal)
+      setOpen(newVal);
+    }
+
+  }
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <StyledHeader sx={{ flexGrow: 1, flexShrink: 0 }}>
       <AppBar position='static'>
         <StyledToolbar>
           <StyledContentBox>
@@ -37,6 +57,7 @@ export default function Navbar() {
               color='inherit'
               aria-label='open drawer'
               sx={{ mr: 2 }}
+              onClick={sidebarHandler}
             >
               <MenuIcon />
             </IconButton>
@@ -65,6 +86,6 @@ export default function Navbar() {
           </Box>
         </StyledToolbar>
       </AppBar>
-    </Box>
+    </StyledHeader>
   );
 }
