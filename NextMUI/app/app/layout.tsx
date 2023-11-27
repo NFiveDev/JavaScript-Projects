@@ -26,7 +26,7 @@ export default function RootLayout({
               display: 'flex'
             }}>
               <Sidebar />
-              <ContentMain sidebarOpen={true}>
+              <ContentMain>
                 <Navbar />
                 {children}
               </ContentMain>

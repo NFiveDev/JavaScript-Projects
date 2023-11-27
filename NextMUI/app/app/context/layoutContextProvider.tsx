@@ -1,6 +1,7 @@
 'use client'
 
-import React, { ReactNode, useContext, createContext, useState, Dispatch, SetStateAction } from 'react';
+import { convertLocalSidebarStateBoolean, getLocalStorageSidebarState } from '@/utility/layoutHelper';
+import React, { ReactNode, useContext, createContext, useState, Dispatch, SetStateAction, useEffect } from 'react';
 
 type ILayoutContext = {
   open: boolean,
@@ -15,6 +16,15 @@ const LayoutContext = createContext<ILayoutContext>({
 export function LayoutContextProvider(props: { children: ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
+
+  useEffect(() => {
+    const sidebarBeenClosedOrOpened = getLocalStorageSidebarState();
+
+    if(sidebarBeenClosedOrOpened != null) {
+      const actualSidebarState = convertLocalSidebarStateBoolean(sidebarBeenClosedOrOpened);
+      setSidebarOpen(actualSidebarState)
+    }
+  }, [])
 
   return <LayoutContext.Provider value={{
     open: sidebarOpen,

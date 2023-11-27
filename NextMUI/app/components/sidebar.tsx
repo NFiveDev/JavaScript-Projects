@@ -7,6 +7,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import { useLayoutContext } from '@/app/context/layoutContextProvider';
+import useLayout from '@/hooks/useLayout';
 
 export const DRAWER_WIDTH = 240;
 
@@ -38,7 +40,7 @@ const StyledHeaderContent = styled('div')({
 });
 
 export default function Sidebar() {
-  const [open, setOpen] = useState(true);
+  const { sidebarOpen } = useLayout();
 
 
   return (
@@ -50,9 +52,9 @@ export default function Sidebar() {
         boxSizing: 'border-box',
       },
     }}
-      variant='permanent'
+      variant='persistent'
       anchor='left'
-      open={open}>
+      open={sidebarOpen}>
       <StyledHeaderContent>
         <Typography variant='h5'>Dev Academy</Typography>
       </StyledHeaderContent>

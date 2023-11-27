@@ -11,6 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { useLayoutContext } from '@/app/context/layoutContextProvider';
+import useLayout from '@/hooks/useLayout';
 
 const StyledToolbar = styled(Toolbar)(() => ({
   display: 'flex',
@@ -31,19 +32,12 @@ const StyledHeader = styled('header')({
 }) 
 
 export default function Navbar() {
-  const {open, setOpen} = useLayoutContext();
+  const {sidebarOpen, setSidebarState} = useLayout();
 
   const oppositeBooleanValue = (input: boolean) => !input; 
 
   const sidebarHandler = () => {
-    console.log('called')
-    if(open){
-      console.log(open)
-      const newVal = oppositeBooleanValue(open);
-      console.log("hejsa", newVal)
-      setOpen(newVal);
-    }
-
+    setSidebarState(oppositeBooleanValue(sidebarOpen));
   }
 
   return (

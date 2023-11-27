@@ -1,9 +1,10 @@
 'use client'
 
+import { useLayoutContext } from "@/app/context/layoutContextProvider";
 import { DRAWER_WIDTH } from "../sidebar";
 import { styled, useTheme } from '@mui/material/styles';
 import * as React from 'react';
-import { useState } from "react";
+import useLayout from "@/hooks/useLayout";
 
 const StyledMain = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -25,10 +26,10 @@ const StyledMain = styled('main', { shouldForwardProp: (prop) => prop !== 'open'
   }
 });
 
-export default function ContentMain(props: { children: React.ReactNode, sidebarOpen: boolean }) {
+export default function ContentMain(props: { children: React.ReactNode }) {
   const theme = useTheme();
-  const [open, setOpen] = useState(true);
+  const { sidebarOpen } = useLayout();
 
-  return <StyledMain open={open}>{props.children}</StyledMain>
+  return <StyledMain open={sidebarOpen}>{props.children}</StyledMain>
 }
 
