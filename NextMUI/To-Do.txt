@@ -1,0 +1,10 @@
+huskere:
+- sidebar state skal gemmes i uri istedet for localstorage.
+
+opgaver:
+- homepage
+- sidebar
+- routing
+- dynamic routing
+- login
+- api - mongo integration

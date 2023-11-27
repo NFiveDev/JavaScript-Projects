@@ -1,6 +1,5 @@
 'use client'
 
-import { useLayoutContext } from "@/app/context/layoutContextProvider";
 import { DRAWER_WIDTH } from "../sidebar";
 import { styled, useTheme } from '@mui/material/styles';
 import * as React from 'react';

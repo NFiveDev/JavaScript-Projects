@@ -4,10 +4,8 @@ import { Drawer } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { useLayoutContext } from '@/app/context/layoutContextProvider';
 import useLayout from '@/hooks/useLayout';
 
 export const DRAWER_WIDTH = 240;

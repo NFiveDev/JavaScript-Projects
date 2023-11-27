@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { useLayoutContext } from '@/app/context/layoutContextProvider';
 import useLayout from '@/hooks/useLayout';
 
 const StyledToolbar = styled(Toolbar)(() => ({

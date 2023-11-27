@@ -5,7 +5,7 @@ import ThemeRegistry from '@/components/theme/themeRegistry'
 import Navbar from '@/components/navbar'
 import Sidebar, { DRAWER_WIDTH } from '@/components/sidebar'
 import ContentMain from '@/components/wrappers/contentMain'
-import Providers from './context/providers'
+import Providers from '../context/providers'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

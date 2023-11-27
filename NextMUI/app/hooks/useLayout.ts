@@ -1,4 +1,4 @@
-import { useLayoutContext } from "@/app/context/layoutContextProvider";
+import { useLayoutContext } from "@/context/layoutContextProvider";
 import { setLocalStorageSidebarState } from "@/utility/layoutHelper";
 
 
