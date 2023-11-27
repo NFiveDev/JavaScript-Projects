@@ -5,7 +5,7 @@ import { styled, useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import useLayout from "@/hooks/useLayout";
 
-const StyledMain = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+const StyledMain = styled('div', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
 }>(({ open, theme }) => {
   return {
