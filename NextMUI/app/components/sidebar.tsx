@@ -7,22 +7,21 @@ import ListItemButton from '@mui/material/ListItemButton';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import useLayout from '@/hooks/useLayout';
+import Image from 'next/image';
+import Divider from '@mui/material/Divider';
 
 export const DRAWER_WIDTH = 240;
 
-const NavListItem = () => {
+const NavListItems = () => {
   return (
-    <ListItem>
-      <ListItemButton></ListItemButton>
-    </ListItem>
-  );
-};
+    <List>
+      <ListItem>
+        <ListItemButton>
 
-const NavigationList = () => {
-  return (
-    <nav>
-      <List></List>
-    </nav>
+        </ListItemButton>
+      </ListItem>
+    </List>
+
   );
 };
 
@@ -34,30 +33,46 @@ const SidebarContentWrapper = styled('div')({
 });
 
 const StyledHeaderContent = styled('div')({
-
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingTop: 10,
+  paddingBottom: 10,
+  gap: 10
 });
 
 export default function Sidebar() {
   const { sidebarOpen } = useLayout();
 
-
   return (
     <Drawer sx={{
       width: DRAWER_WIDTH,
       flexShrink: 0,
+
       '& .MuiDrawer-paper': {
         width: DRAWER_WIDTH,
         boxSizing: 'border-box',
+        padding: '1rem 1rem 1rem 1rem',
       },
     }}
       variant='persistent'
       anchor='left'
       open={sidebarOpen}>
       <StyledHeaderContent>
-        <Typography variant='h5'>Dev Academy</Typography>
+        <Image
+          width={40}
+          height={40}
+          alt='brand'
+          src={'/logo.svg'}
+          style={{ display: 'inline-block' }}
+        />
+        <Typography variant='h6'>Dev Academy</Typography>
       </StyledHeaderContent>
+      <Divider />
       <SidebarContentWrapper>
-
+        <StyledHeaderContent>
+          <NavListItems />
+        </StyledHeaderContent>
       </SidebarContentWrapper>
     </Drawer>
   );
