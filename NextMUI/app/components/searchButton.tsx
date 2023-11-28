@@ -1,4 +1,5 @@
-import { Typography, styled } from '@mui/material';
+import { Typography, styled, Box } from '@mui/material';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
 const StyledSearchButton = styled('button')(() => ({
   display: 'flex',
@@ -12,11 +13,6 @@ const StyledSearchButton = styled('button')(() => ({
   marginTop: '1rem',
   marginBottom: '1rem',
   backgroundColor: 'white',
-  
-  '& .search-text': {
-    color: '#607d8b',
-    
-  }
 }));
 
 export default function SearchButton() {
@@ -26,10 +22,10 @@ export default function SearchButton() {
 
   return (
     <StyledSearchButton onClick={openSearchModalHandler}>
-      <div>
+      <Box sx={{display: 'flex', gap: '0.1rem'}}>
+        <SearchRoundedIcon sx={{color: '#1976d2'}} />
         <Typography color={'#607d8b'} fontWeight={600} variant='subtitle2'>Quick search...</Typography>
-        <span className='search-text'></span>
-      </div>
+      </Box>
       <div></div>
     </StyledSearchButton>
   );
