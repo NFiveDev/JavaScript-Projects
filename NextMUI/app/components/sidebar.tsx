@@ -1,6 +1,6 @@
 'use client'
 
-import { Drawer } from '@mui/material';
+import { Drawer, Stack } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import useLayout from '@/hooks/useLayout';
 import Image from 'next/image';
 import Divider from '@mui/material/Divider';
+import SearchButton from './searchButton';
 
 export const DRAWER_WIDTH = 240;
 
@@ -29,7 +30,8 @@ const SidebarContentWrapper = styled('div')({
   display: 'flex',
   flexDirection: 'row',
   paddingLeft: '1rem',
-  paddingRight: '1rem'
+  paddingRight: '1rem',
+  minWidth: '100%'
 });
 
 const StyledHeaderContent = styled('div')({
@@ -69,11 +71,12 @@ export default function Sidebar() {
         <Typography variant='h6'>Dev Academy</Typography>
       </StyledHeaderContent>
       <Divider />
-      <SidebarContentWrapper>
-        <StyledHeaderContent>
+
+        <Stack>
+          <SearchButton />
           <NavListItems />
-        </StyledHeaderContent>
-      </SidebarContentWrapper>
+        </Stack>
+
     </Drawer>
   );
 }
