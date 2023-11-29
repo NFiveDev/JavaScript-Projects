@@ -1,7 +1,8 @@
 import { Typography, styled, Box } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
-
+import SysHelper from '@/utility/sysHelper';
+import { FC } from 'react';
 const StyledSearchButton = styled('button')(() => ({
   display: 'flex',
   justifyContent: 'space-between',
@@ -15,8 +16,52 @@ const StyledSearchButton = styled('button')(() => ({
   marginBottom: '1rem',
   backgroundColor: 'white',
   width: '180px',
-  cursor: 'pointer'
+  cursor: 'pointer',
 }));
+
+const SysSpecificCommand : FC = () => {
+  const operationSys = SysHelper.GetSys();
+
+  if (operationSys != undefined) {
+    if (operationSys === 'win') {
+      return (
+        <>
+          <Typography
+            color={'#757575'}
+            fontWeight={500}
+            variant='subtitle2'
+          >
+            CTRL +
+          </Typography>
+          <Typography
+            color={'#757575'}
+            fontWeight={500}
+            variant='subtitle2'
+          >
+            K
+          </Typography>
+        </>
+      );
+    }
+
+    if (operationSys === 'mac') {
+      return (
+        <>
+          <KeyboardCommandKeyIcon sx={{ width: 16, color: '#757575' }} />
+          <Typography
+            color={'#757575'}
+            fontWeight={500}
+            variant='subtitle2'
+          >
+            K
+          </Typography>
+        </>
+      );
+    }
+
+    return <div></div>
+  }
+};
 
 export default function SearchButton() {
   function openSearchModalHandler() {
@@ -36,14 +81,7 @@ export default function SearchButton() {
         </Typography>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <KeyboardCommandKeyIcon sx={{ width: 16, color: '#757575' }} />
-        <Typography
-          color={'#757575'}
-          fontWeight={500}
-          variant='subtitle2'
-        >
-          K
-        </Typography>
+        <SysSpecificCommand />
       </Box>
     </StyledSearchButton>
   );
