@@ -71,7 +71,6 @@ export default function Sidebar() {
         <Typography variant='h6'>Dev Academy</Typography>
       </StyledHeaderContent>
       <Divider />
-
         <Stack>
           <SearchButton />
           <NavListItems />

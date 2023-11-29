@@ -17,6 +17,7 @@ const StyledSearchButton = styled('button')(() => ({
   backgroundColor: 'white',
   width: '180px',
   cursor: 'pointer',
+  alignItems: 'center'
 }));
 
 const SysSpecificCommand : FC = () => {
@@ -47,13 +48,13 @@ const SysSpecificCommand : FC = () => {
     if (operationSys === 'mac') {
       return (
         <>
-          <KeyboardCommandKeyIcon sx={{ width: 16, color: '#757575' }} />
+          <KeyboardCommandKeyIcon sx={{ width: 14, color: '#757575' }} />
           <Typography
             color={'#757575'}
             fontWeight={500}
-            variant='subtitle2'
+            variant='body2'
           >
-            K
+             K
           </Typography>
         </>
       );
@@ -80,7 +81,7 @@ export default function SearchButton() {
           Quick search...
         </Typography>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', backgroundColor: '#f5f5f5', padding: '1px 3px 1px 3px', border: '1px solid #9e9e9e', borderRadius: '5px' }}>
         <SysSpecificCommand />
       </Box>
     </StyledSearchButton>
