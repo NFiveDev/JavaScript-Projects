@@ -1,10 +1,12 @@
 .background {
   background-repeat: no-repeat;
-  background: linear-gradient(#1e88e5, #29B6F6);
+  background: linear-gradient(#1e88e5, #29B6F6, white);
   background-size: contain;
 }
 
-.hero {
+.hero_content_wrapper {
   display: flex;
   flex-direction: column;
+  padding: 4rem 0rem 4rem 0rem;
 }
+
