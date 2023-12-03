@@ -15,10 +15,10 @@ export default function Home() {
       <Container maxWidth='xl'>
         <Stack direction={{ xs: 'column', md: 'row' }}>
           <div className={styles.hero_content_wrapper}>
-            <Typography variant='h2' component={'h1'} mb={1}>
+            <Typography fontWeight={600} variant='h2' component={'h1'} mb={1} color={'white'}>
               Begin your coding adventure with us!
             </Typography>
-            <Typography variant='h5' component={'h2'} mb={3}>
+            <Typography variant='h6' component={'h2'} mb={3} color={'#e0e0e0'}>
               Explore coding effortlessly with our project-based learning
               platform for aspiring programmers
             </Typography>
@@ -31,7 +31,7 @@ export default function Home() {
               <Button
                 size='large'
                 variant='contained'
-                color='success'
+                color='secondary'
                 href='/course'
                 endIcon={<ArrowForwardRoundedIcon />}
                 disableElevation
@@ -41,7 +41,7 @@ export default function Home() {
               <Button
                 size='large'
                 variant='outlined'
-                color='success'
+                color='secondary'
                 href='/course'
                 endIcon={<PlayCircleOutlineRoundedIcon />}
                 disableElevation

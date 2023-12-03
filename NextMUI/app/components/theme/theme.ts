@@ -13,7 +13,11 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: blue,
-    secondary: teal,
+    secondary: {
+      light: teal[500],
+      main: teal[700],
+      dark: teal[900]
+    },
     info: blueGrey
   },
   typography: {
