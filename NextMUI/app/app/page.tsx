@@ -11,50 +11,71 @@ import Typography from '@mui/material/Typography';
 
 export default function Home() {
   return (
-    <main className={styles.background}>
-      <Container maxWidth='xl'>
-        <Stack direction={{ xs: 'column', md: 'row' }}>
-          <div className={styles.hero_content_wrapper}>
-            <Typography fontWeight={600} variant='h2' component={'h1'} mb={1} color={'white'}>
-              Begin your coding adventure with us!
-            </Typography>
-            <Typography variant='h6' component={'h2'} mb={3} color={'#e0e0e0'}>
-              Explore coding effortlessly with our project-based learning
-              platform for aspiring programmers
-            </Typography>
-            <Box
-              sx={{
-                display: 'flex',
-                gap: '1rem',
-              }}
-            >
-              <Button
-                size='large'
-                variant='contained'
-                color='secondary'
-                href='/course'
-                endIcon={<ArrowForwardRoundedIcon />}
-                disableElevation
+    <main>
+      <section className={styles.background}>
+        <Container maxWidth='xl'>
+          <Stack justifyContent={{xs: 'center'}} direction={{ xs: 'column', md: 'row' }}>
+            <div className={styles.hero_content_wrapper}>
+              <Typography
+                fontWeight={600}
+                variant='h2'
+                component={'h1'}
+                mb={1}
+                color={'white'}
               >
-                Explore
-              </Button>
-              <Button
-                size='large'
-                variant='outlined'
-                color='secondary'
-                href='/course'
-                endIcon={<PlayCircleOutlineRoundedIcon />}
-                disableElevation
+                Begin your coding adventure with us!
+              </Typography>
+              <Typography
+                variant='h6'
+                component={'h2'}
+                mb={3}
+                color={'#e0e0e0'}
               >
-                Introduction
-              </Button>
-            </Box>
-          </div>
-          <div>
-            <Image src={HomeSvg} width={700} alt='coding' />
-          </div>
-        </Stack>
-      </Container>
+                Explore coding effortlessly with our project-based learning
+                platform for aspiring programmers
+              </Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: '1rem',
+                }}
+              >
+                <Button
+                  size='large'
+                  variant='contained'
+                  color='secondary'
+                  href='/course'
+                  endIcon={<ArrowForwardRoundedIcon />}
+                  disableElevation
+                >
+                  Explore
+                </Button>
+                <Button
+                  size='large'
+                  variant='outlined'
+                  color='secondary'
+                  href='/course'
+                  endIcon={<PlayCircleOutlineRoundedIcon />}
+                  disableElevation
+                >
+                  Introduction
+                </Button>
+              </Box>
+            </div>
+            <div>
+              <Image src={HomeSvg} width={700} alt='coding' />
+            </div>
+          </Stack>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          
+        </Container>
+      </section>
+
+
     </main>
   );
 }
