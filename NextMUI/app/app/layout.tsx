@@ -23,7 +23,8 @@ export default function RootLayout({
         <Providers>
           <body>
             <Box sx={{
-              display: 'flex'
+              display: 'flex',
+              overflow: 'auto'
             }}>
               <Sidebar />
               <ContentMain>

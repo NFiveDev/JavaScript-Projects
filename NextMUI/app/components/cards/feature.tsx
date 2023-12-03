@@ -7,7 +7,7 @@ type featureProps = {
   title: string;
   icon: JSX.Element;
   description: string;
-  link: string;
+  link: { label?: string; href: string };
 };
 
 export const features: featureProps[] = [
@@ -21,19 +21,72 @@ export const features: featureProps[] = [
     ),
     description:
       'Discover the Future of Learning through Interactive Videos and Project-Based Courses.',
-    link: '/about',
+    link: {
+      href: '/about',
+      label: '',
+    },
+  },
+  {
+    title: 'Real World Projects',
+    icon: (
+      <Image
+        alt='real world projects'
+        src={blueprint}
+      />
+    ),
+    description:
+      'Discover the Future of Learning through Interactive Videos and Project-Based Courses.',
+    link: {
+      href: '/about',
+      label: '',
+    },
+  },
+  {
+    title: 'Real World Projects',
+    icon: (
+      <Image
+        alt='real world projects'
+        src={blueprint}
+      />
+    ),
+    description:
+      'Discover the Future of Learning through Interactive Videos and Project-Based Courses.',
+    link: {
+      href: '/about',
+      label: '',
+    },
+  },
+  {
+    title: 'Real World Projects',
+    icon: (
+      <Image
+        alt='real world projects'
+        src={blueprint}
+      />
+    ),
+    description:
+      'Discover the Future of Learning through Interactive Videos and Project-Based Courses.',
+    link: {
+      href: '/about',
+      label: '',
+    },
   },
 ];
 
 export function FeatureCard(props: featureProps) {
   return (
-    <Box>
-      <Stack>
-        <Typography variant='subtitle1'>{props.title}</Typography>
-        <Box>{props.icon}</Box>
+    <Box maxWidth={360}>
+      <Stack spacing={1}>
+      <Box>{props.icon}</Box>
+        <Typography
+          variant='h4'
+          fontWeight={600}
+        >
+          {props.title}
+        </Typography>
         <Typography>{props.description}</Typography>
         <BasicLink
-          href={props.link}
+          href={props.link.href}
           label='Learn more'
           withArrow={true}
         ></BasicLink>

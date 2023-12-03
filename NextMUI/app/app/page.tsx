@@ -77,16 +77,16 @@ export default function Home() {
       </section>
 
       <section>
-        <Container maxWidth={'xl'}>
-          <Grid container>
+        <Container maxWidth={'lg'}>
+          <Grid container spacing={4}>
             {features?.map((item, k) => {
               return (
-                <Grid key={k}>
+                <Grid key={k} xs={8} lg={6} border={'1px solid black'}>
                   <FeatureCard
                     title={item.title}
                     icon={item.icon}
                     description={item.description}
-                    link=''
+                    link={item.link}
                   />
                 </Grid>
               );
