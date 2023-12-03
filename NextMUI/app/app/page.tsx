@@ -1,20 +1,23 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import Container from '@mui/material/Container';
-import { styled } from '@mui/material/styles';
-import { Box, Stack } from '@mui/material';
+import { Box, Grid, Stack } from '@mui/material';
 import HomeSvg from '../public/hero-image 1.svg';
 import Button from '@mui/material/Button';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 import Typography from '@mui/material/Typography';
+import { FeatureCard, features } from '@/components/cards/feature';
 
 export default function Home() {
   return (
     <main>
       <section className={styles.background}>
         <Container maxWidth='xl'>
-          <Stack justifyContent={{xs: 'center'}} direction={{ xs: 'column', md: 'row' }}>
+          <Stack
+            justifyContent={{ xs: 'center' }}
+            direction={{ xs: 'column', md: 'row' }}
+          >
             <div className={styles.hero_content_wrapper}>
               <Typography
                 fontWeight={600}
@@ -63,19 +66,34 @@ export default function Home() {
               </Box>
             </div>
             <div>
-              <Image src={HomeSvg} width={700} alt='coding' />
+              <Image
+                src={HomeSvg}
+                width={600}
+                alt='coding'
+              />
             </div>
           </Stack>
         </Container>
       </section>
 
       <section>
-        <Container>
-          
+        <Container maxWidth={'xl'}>
+          <Grid container>
+            {features?.map((item, k) => {
+              return (
+                <Grid key={k}>
+                  <FeatureCard
+                    title={item.title}
+                    icon={item.icon}
+                    description={item.description}
+                    link=''
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
         </Container>
       </section>
-
-
     </main>
   );
 }
