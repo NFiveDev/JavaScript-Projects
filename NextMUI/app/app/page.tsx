@@ -92,7 +92,6 @@ export default function Home() {
                     key={k}
                     xs={8}
                     lg={6}
-                    
                   >
                     <FeatureCard
                       title={item.title}
@@ -104,6 +103,29 @@ export default function Home() {
                 );
               })}
             </Grid>
+          </Container>
+        </div>
+      </section>
+
+      <section style={{marginTop: 5}}>
+        <div style={{ position: 'relative' }}>
+          <div style={{ zIndex: 0 }}>
+            <Image
+              src='/home-second_banner.jpg'
+              alt='learning to code'
+              objectFit='cover'
+              fill
+              objectPosition='center'
+            />
+          </div>
+
+          <Container sx={{ padding: 20 }}>
+            <div style={{ zIndex: 1, position: 'relative' }}>
+              <Stack>
+                <Typography variant='h3' color='white'>Get a personalized Learning Experience</Typography>
+                
+              </Stack>
+            </div>
           </Container>
         </div>
       </section>
