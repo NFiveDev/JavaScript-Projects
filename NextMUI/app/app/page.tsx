@@ -116,6 +116,9 @@ export default function Home() {
               objectFit='cover'
               fill
               objectPosition='center'
+              style={{
+                backgroundColor: ''
+              }}
             />
           </div>
 
@@ -123,7 +126,7 @@ export default function Home() {
             <div style={{ zIndex: 1, position: 'relative' }}>
               <Stack>
                 <Typography variant='h3' color='white'>Get a personalized Learning Experience</Typography>
-                
+
               </Stack>
             </div>
           </Container>
