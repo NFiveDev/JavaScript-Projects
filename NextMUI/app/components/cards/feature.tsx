@@ -1,5 +1,9 @@
 import Image from 'next/image';
 import blueprint from '../../public/feature/blueprint.svg';
+import stack from '../../public/feature/stack.svg';
+import journey from '../../public/feature/journey.svg';
+import cogwheel from '../../public/feature/cogwheel.svg';
+
 import { Box, Stack, Typography } from '@mui/material';
 import { BasicLink } from '../link';
 
@@ -31,7 +35,7 @@ export const features: featureProps[] = [
     icon: (
       <Image
         alt='real world projects'
-        src={blueprint}
+        src={stack}
       />
     ),
     description:
@@ -46,7 +50,7 @@ export const features: featureProps[] = [
     icon: (
       <Image
         alt='real world projects'
-        src={blueprint}
+        src={cogwheel}
       />
     ),
     description:
@@ -61,7 +65,7 @@ export const features: featureProps[] = [
     icon: (
       <Image
         alt='real world projects'
-        src={blueprint}
+        src={journey}
       />
     ),
     description:
@@ -75,16 +79,21 @@ export const features: featureProps[] = [
 
 export function FeatureCard(props: featureProps) {
   return (
-    <Box maxWidth={360}>
-      <Stack spacing={1}>
-      <Box>{props.icon}</Box>
+    <Box
+      paddingRight={2}
+      paddingLeft={2}
+      maxWidth={360}
+    >
+      <Stack>
+        <Box marginBottom={2}>{props.icon}</Box>
         <Typography
           variant='h4'
           fontWeight={600}
+          paddingBottom={1}
         >
           {props.title}
         </Typography>
-        <Typography>{props.description}</Typography>
+        <Typography paddingBottom={1} fontWeight={500} color={'#616161'}>{props.description}</Typography>
         <BasicLink
           href={props.link.href}
           label='Learn more'

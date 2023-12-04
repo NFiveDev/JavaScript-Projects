@@ -8,10 +8,10 @@ export function BasicLink(props: {
   withArrow: boolean;
 }) {
   return (
-    <Link href={props.href}>
-      <Stack direction={'row'}>
-        <Typography>{props.label}</Typography>
-        {props.withArrow === true && <ArrowForwardRoundedIcon />}
+    <Link href={props.href} style={{textDecoration: 'none'}}>
+      <Stack direction={'row'} gap={1}>
+        <Typography color={'#2196f3'} fontWeight={600}>{props.label}</Typography>
+        {props.withArrow === true && <ArrowForwardRoundedIcon sx={{color: '#2196f3'}} />}
       </Stack>
     </Link>
   );

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main>
       <section className={styles.background}>
-        <Container maxWidth='xl'>
+        <Container maxWidth='lg'>
           <Stack
             justifyContent={{ xs: 'center' }}
             direction={{ xs: 'column', md: 'row' }}
@@ -76,23 +76,36 @@ export default function Home() {
         </Container>
       </section>
 
-      <section>
-        <Container maxWidth={'lg'}>
-          <Grid container spacing={4}>
-            {features?.map((item, k) => {
-              return (
-                <Grid key={k} xs={8} lg={6} border={'1px solid black'}>
-                  <FeatureCard
-                    title={item.title}
-                    icon={item.icon}
-                    description={item.description}
-                    link={item.link}
-                  />
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Container>
+      <section className={styles.padding_top_bot}>
+        <div>
+          <Container maxWidth={'lg'}>
+            <Grid
+              container
+              spacing={5}
+              direction={'row'}
+              sx={{ margin: 0, justifyContent: 'center' }}
+            >
+              {features?.map((item, k) => {
+                return (
+                  <Grid
+                    item
+                    key={k}
+                    xs={8}
+                    lg={6}
+                    
+                  >
+                    <FeatureCard
+                      title={item.title}
+                      icon={item.icon}
+                      description={item.description}
+                      link={item.link}
+                    />
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Container>
+        </div>
       </section>
     </main>
   );

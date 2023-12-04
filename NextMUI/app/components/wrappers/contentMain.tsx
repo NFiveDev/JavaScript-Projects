@@ -25,10 +25,28 @@ const StyledMain = styled('div', { shouldForwardProp: (prop) => prop !== 'open' 
   }
 });
 
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+  open?: boolean;
+}>(({ theme, open }) => ({
+  flexGrow: 1,
+  transition: theme.transitions.create('margin', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  marginLeft: `-${DRAWER_WIDTH}px`,
+  ...(open && {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  }),
+}));
+
 export default function ContentMain(props: { children: React.ReactNode }) {
   const theme = useTheme();
   const { sidebarOpen } = useLayout();
 
-  return <StyledMain open={sidebarOpen}>{props.children}</StyledMain>
+  return <Main open={sidebarOpen}>{props.children}</Main>
 }
 
