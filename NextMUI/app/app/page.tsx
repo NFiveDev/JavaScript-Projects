@@ -121,7 +121,9 @@ export default function Home() {
                 <Typography variant='h3' color='white'>
                   Get a personalized Learning Experience
                 </Typography>
-                <SignUpForm />
+                <Box sx={{background: 'white', borderRadius: '10px'}}>
+                  <SignUpForm />
+                </Box>
               </Stack>
             </div>
           </Container>
