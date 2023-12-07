@@ -8,10 +8,13 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 import Typography from '@mui/material/Typography';
 import { FeatureCard, features } from '@/components/cards/feature';
-
+import { ImageOverlay } from '@/components/overlays';
+import { SignUpForm } from '@/components/forms/form';
 export default function Home() {
+  const sectionBottomSpace = 50;
+
   return (
-    <main>
+    <main style={{ marginBottom: sectionBottomSpace }}>
       <section className={styles.background}>
         <Container maxWidth='lg'>
           <Stack
@@ -66,11 +69,7 @@ export default function Home() {
               </Box>
             </div>
             <div>
-              <Image
-                src={HomeSvg}
-                width={600}
-                alt='coding'
-              />
+              <Image src={HomeSvg} width={600} alt='coding' />
             </div>
           </Stack>
         </Container>
@@ -87,12 +86,7 @@ export default function Home() {
             >
               {features?.map((item, k) => {
                 return (
-                  <Grid
-                    item
-                    key={k}
-                    xs={8}
-                    lg={6}
-                  >
+                  <Grid item key={k} xs={8} lg={6}>
                     <FeatureCard
                       title={item.title}
                       icon={item.icon}
@@ -107,26 +101,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{marginTop: 5}}>
+      <section style={{ marginTop: 5, marginBottom: 5 }}>
         <div style={{ position: 'relative' }}>
-          <div style={{ zIndex: 0 }}>
-            <Image
-              src='/home-second_banner.jpg'
-              alt='learning to code'
-              objectFit='cover'
-              fill
-              objectPosition='center'
-              style={{
-                backgroundColor: ''
-              }}
-            />
-          </div>
-
-          <Container sx={{ padding: 20 }}>
-            <div style={{ zIndex: 1, position: 'relative' }}>
+          <Image
+            src='/home-second_banner.jpg'
+            alt='learning to code'
+            objectFit='cover'
+            fill
+            objectPosition='center'
+            style={{
+              zIndex: 0,
+            }}
+          />
+          <ImageOverlay color='rgba(30, 60, 90, 0.7)'/>
+          
+          <Container sx={{ padding: 20, position: 'relative' }}>
+            <div style={{}}>
               <Stack>
-                <Typography variant='h3' color='white'>Get a personalized Learning Experience</Typography>
-
+                <Typography variant='h3' color='white'>
+                  Get a personalized Learning Experience
+                </Typography>
+                <SignUpForm />
               </Stack>
             </div>
           </Container>
