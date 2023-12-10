@@ -1,20 +1,18 @@
 export type formState = {
-  isloading: boolean;
+  isLoading: boolean;
   isDisabled: boolean;
   errorMsg: string;
   hasError: () => boolean;
 }
 
-export type DynamicFormProps = {
+export type FormProps = {
   actions: FormActionProps[];
   fields: FormField[];
   action: string;
   method: 'GET' | 'POST';
 };
 
-export enum formActionKind {
-  NOT_LOADING,
-  IS_LOADING,
-  ENABLE,
-  DISABLE
+export type formController = {
+  formIsDisabled: boolean;
+  formIsLoading: boolean;
 }

@@ -1,8 +1,10 @@
+import type { formController } from "../form-types";
+
 interface Field {
   id: string;
   label: string;
   validator?: () => boolean;
-  controller?: any
+  controller?: formController
 }
 
 

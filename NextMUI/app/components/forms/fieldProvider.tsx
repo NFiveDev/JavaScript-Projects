@@ -1,12 +1,13 @@
 import CustomTextField from './fields/textField';
 import { FormField } from './fields/field';
 import { EmailField } from './fields/emailField';
+import { formController } from './form-types';
 
-export function FieldProvider(configurations: FormField[]) {
+export function FieldProvider(configurations: FormField[], controller: undefined | formController) {
   let formConfiguration = [...configurations];
   const fields: JSX.Element[] = [];
 
-  function SetController(formController: any) {
+  function SetController(formController: formController) {
     const controlledFormConfiguration = formConfiguration.map((field) => {
       return {
         ...field,
@@ -18,6 +19,8 @@ export function FieldProvider(configurations: FormField[]) {
   }
 
   function Build() {
+    if(controller != undefined) SetController(controller)
+
     formConfiguration.forEach((f) => {
       switch (f.fieldType) {
         case 'text':
