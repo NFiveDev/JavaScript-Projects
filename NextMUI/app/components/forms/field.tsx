@@ -1,12 +1,6 @@
 import CustomTextField from "./fields/TextField";
+import { IField } from "./fields/field";
 
-
-export interface IField {
-    id: string,
-    label: string,
-    fieldType: 'email' | 'text' | 'number' | 'password',
-    validator?: () => boolean
-}
 
 export function FieldProvider(configurations: IField[]) {
     const fields : JSX.Element[] = [];

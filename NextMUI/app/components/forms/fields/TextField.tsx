@@ -1,10 +1,6 @@
 import TextField from '@mui/material/TextField';
-import { IField } from '../field';
+import { TextFieldProps } from './field';
 
-interface CustomTextFieldProps extends IField{
-    variant: 'standard' | 'outlined';    
-}
-
-export default function CustomTextField(props: CustomTextFieldProps){
+export default function TextFieldWrapper(props: TextFieldProps) {
     return <TextField variant={props.variant} label={props.label} />
 }
