@@ -3,6 +3,7 @@ interface InputField {
   fieldType: 'email' | 'text' | 'number' | 'password';
   label: string;
   validator?: () => boolean;
+  placeholder?: string;
 }
 
 interface SelectField {

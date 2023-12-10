@@ -166,7 +166,7 @@ export default function Home() {
                     Register as User
                   </Typography>
                 </Box>
-                <Box paddingY={'0.4rem'}>
+                <Box >
                   <SignUpForm />
                 </Box>
                 

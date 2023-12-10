@@ -1,6 +1,7 @@
 import { ActionPanel, FormActionProps } from './action';
 import { FieldProvider } from './fieldProvider';
 import { FormField } from './fields/field';
+import { Box } from '@mui/material';
 
 type DynamicFormProps = {
   actions: FormActionProps[];
@@ -17,7 +18,17 @@ function DynamicForm(props: DynamicFormProps) {
       action={props.action}
       method={props.method}
     >
-      {fields}
+      {fields.map((field, index) => {
+        return (
+          <Box paddingY={1} key={'field-' + index}>
+            {field}
+          </Box>
+        )
+      })}
+      <ActionPanel
+        panelPosition='left'
+        actions={props.actions}
+      />
     </form>
   );
 }
@@ -29,9 +40,26 @@ export function SignUpForm() {
       label: 'username',
       fieldType: 'text',
     },
+    {
+      id: 'email',
+      label: 'Email',
+      fieldType: 'email',
+      placeholder: 'Type your email address...'
+    },
+    {
+      id: 'password',
+      label: 'password',
+      fieldType: 'password'
+    }
   ];
 
-  const actions: FormActionProps[] = [];
+  const actions: FormActionProps[] = [
+    {
+      label: 'Sign Up!',
+      isPrimary: true,
+      color: 'success'
+    },
+  ];
 
   return (
     <DynamicForm

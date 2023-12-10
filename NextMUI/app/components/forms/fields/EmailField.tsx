@@ -1,3 +1,5 @@
+'use client'
+
 import TextField from '@mui/material/TextField';
 import { EmailFieldProps } from './field';
 import { useState } from 'react';
@@ -14,10 +16,13 @@ export function EmailField(props: EmailFieldProps) {
 
   return (
     <TextField
+      placeholder={props.placeholder}
+      variant={props.variant}
       error={!isValid}
       helperText={isValid === false ? helperText : ''}
       id={props.id}
       label={props.label}
+      fullWidth
       onChange={onChangeHandler}
       type='email'
     />

@@ -1,7 +1,8 @@
 import CustomTextField from './fields/textField';
-import { IField } from './fields/field';
+import { FormField } from './fields/field';
+import { EmailField } from './fields/emailField';
 
-export function FieldProvider(configurations: IField[]) {
+export function FieldProvider(configurations: FormField[]) {
   const fields: JSX.Element[] = [];
 
   function Build() {
@@ -19,11 +20,12 @@ export function FieldProvider(configurations: IField[]) {
           break;
         case 'email':
           fields.push(
-            <CustomTextField
+            <EmailField
               id={f.id}
               variant='standard'
               label={f.label}
               fieldType='email'
+              placeholder={f.placeholder}
             />
           );
           break;
