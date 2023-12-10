@@ -124,7 +124,7 @@ export default function Home() {
           />
           <ImageOverlay color='rgba(30, 60, 90, 0.7)' />
 
-          <Container sx={{ padding: 20, position: 'relative' }}>
+          <Container sx={{ padding: 10, position: 'relative' }}>
             <Grid
               container
               sx={{ maxWidth: 'lg' }}
