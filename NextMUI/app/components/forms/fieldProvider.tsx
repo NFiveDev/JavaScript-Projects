@@ -3,10 +3,22 @@ import { FormField } from './fields/field';
 import { EmailField } from './fields/emailField';
 
 export function FieldProvider(configurations: FormField[]) {
+  let formConfiguration = [...configurations];
   const fields: JSX.Element[] = [];
 
+  function SetController(formController: any) {
+    const controlledFormConfiguration = formConfiguration.map((field) => {
+      return {
+        ...field,
+        controller: formController
+      }
+    })
+
+    formConfiguration = controlledFormConfiguration; 
+  }
+
   function Build() {
-    configurations.forEach((f) => {
+    formConfiguration.forEach((f) => {
       switch (f.fieldType) {
         case 'text':
           fields.push(
@@ -15,6 +27,7 @@ export function FieldProvider(configurations: FormField[]) {
               variant='standard'
               label={f.label}
               fieldType='text'
+              placeholder={f.placeholder}
             />
           );
           break;
@@ -36,17 +49,15 @@ export function FieldProvider(configurations: FormField[]) {
               variant='standard'
               label={f.label}
               fieldType='password'
+              placeholder={f.placeholder}
             />
           );
           break;
         default:
           fields.push(
-            <CustomTextField
-              id={f.id}
-              variant='standard'
-              label={f.label}
-              fieldType='text'
-            />
+            <div>
+              <p>Cannot Resolve Field</p>
+            </div>
           );
           break;
       }
@@ -57,5 +68,6 @@ export function FieldProvider(configurations: FormField[]) {
 
   return {
     GetFields: Build,
+    WithController: SetController
   };
 }

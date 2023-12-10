@@ -1,17 +1,19 @@
-interface InputField {
+interface Field {
   id: string;
-  fieldType: 'email' | 'text' | 'number' | 'password';
   label: string;
   validator?: () => boolean;
+  controller?: any
+}
+
+
+interface InputField extends Field {
+  fieldType: 'email' | 'text' | 'number' | 'password';
   placeholder?: string;
 }
 
-interface SelectField {
-  id: string;
+interface SelectField extends Field {
   fieldType: 'select';
-  label: string;
   options: string[];
-  validator?: () => boolean;
 }
 
 export interface TextFieldProps extends InputField {
