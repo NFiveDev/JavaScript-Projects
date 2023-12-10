@@ -1,5 +1,5 @@
 import { ActionPanel, FormActionProps } from './action';
-import { FieldProvider } from './field';
+import { FieldProvider } from './fieldProvider';
 import { IField } from './fields/field';
 
 type DynamicFormProps = {
@@ -10,6 +10,9 @@ type DynamicFormProps = {
 };
 
 function DynamicForm(props: DynamicFormProps) {
+  
+
+
   const fields = FieldProvider(props.fields).GetFields();
 
   return <form action={props.action} method={props.method}>{fields}</form>;
