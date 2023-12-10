@@ -1,24 +1,38 @@
 import { ActionPanel, FormActionProps } from "./action";
+import { FieldProvider, IField } from "./field";
 
 type DynamicFormProps = {
-  actions: {
-    execute: () => void,
-    label: string
-  }
+  actions: FormActionProps[];
+  fields: IField[]
 }
 
 function DynamicForm(props: DynamicFormProps) {
-  
+
+  const fields = FieldProvider(props.fields).GetFields();
+
+  return (
+    <form>
+      {fields}
+
+    </form>
+  )
+
+
 }
 
 
 export function SignUpForm() {
 
+  const fields: IField[] = [
+    {
+      id:'username',
+      label: 'username',
+      fieldType: 'text',
+      
+    }
+  ]
+
   const actions: FormActionProps[] = []
 
-  return (
-    <form action=''>
-      <ActionPanel actions={actions} panelPosition="center"/>
-    </form>
-  )
+  return <DynamicForm actions={actions} fields={fields}/>
 }
