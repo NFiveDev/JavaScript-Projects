@@ -10,16 +10,19 @@ type DynamicFormProps = {
 };
 
 function DynamicForm(props: DynamicFormProps) {
-  
-
-
   const fields = FieldProvider(props.fields).GetFields();
 
-  return <form action={props.action} method={props.method}>{fields}</form>;
+  return (
+    <form
+      action={props.action}
+      method={props.method}
+    >
+      {fields}
+    </form>
+  );
 }
 
 export function SignUpForm() {
-  
   const fields: IField[] = [
     {
       id: 'username',
@@ -30,5 +33,12 @@ export function SignUpForm() {
 
   const actions: FormActionProps[] = [];
 
-  return <DynamicForm action='/signup' method='POST' actions={actions} fields={fields} />;
+  return (
+    <DynamicForm
+      action='/signup'
+      method='POST'
+      actions={actions}
+      fields={fields}
+    />
+  );
 }

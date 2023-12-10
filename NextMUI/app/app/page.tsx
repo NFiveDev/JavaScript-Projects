@@ -69,7 +69,11 @@ export default function Home() {
               </Box>
             </div>
             <div>
-              <Image src={HomeSvg} width={600} alt='coding' />
+              <Image
+                src={HomeSvg}
+                width={600}
+                alt='coding'
+              />
             </div>
           </Stack>
         </Container>
@@ -86,7 +90,12 @@ export default function Home() {
             >
               {features?.map((item, k) => {
                 return (
-                  <Grid item key={k} xs={8} lg={6}>
+                  <Grid
+                    item
+                    key={k}
+                    xs={8}
+                    lg={6}
+                  >
                     <FeatureCard
                       title={item.title}
                       icon={item.icon}
@@ -113,19 +122,56 @@ export default function Home() {
               zIndex: 0,
             }}
           />
-          <ImageOverlay color='rgba(30, 60, 90, 0.7)'/>
-          
+          <ImageOverlay color='rgba(30, 60, 90, 0.7)' />
+
           <Container sx={{ padding: 20, position: 'relative' }}>
-            <div style={{}}>
-              <Stack>
-                <Typography variant='h3' color='white'>
-                  Get a personalized Learning Experience
-                </Typography>
-                <Box sx={{background: 'white', borderRadius: '10px'}}>
+            <Grid
+              container
+              sx={{ maxWidth: 'lg' }}
+            >
+              <Grid
+                item
+                xs={12}
+                lg={6}
+              >
+                <Box>
+                  <Typography
+                    variant='h3'
+                    color='white'
+                  >
+                    Get a personalized Learning Experience
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                lg={5}
+                sx={{ background: 'white', borderRadius: '10px' }}
+                paddingLeft={'1.5rem'}
+                paddingRight={'1.5rem'}
+                paddingBottom={'1.5rem'}
+              >
+                <Box>
+                  <Typography
+                    paddingTop={5}
+                    marginLeft={'auto'}
+                    marginRight={'auto'}
+                    variant='h4'
+                    fontWeight={500}
+                    color={'#1e88e5'}
+                    textAlign={'left'}
+                    
+                  >
+                    Register as User
+                  </Typography>
+                </Box>
+                <Box paddingY={'0.4rem'}>
                   <SignUpForm />
                 </Box>
-              </Stack>
-            </div>
+                
+              </Grid>
+            </Grid>
           </Container>
         </div>
       </section>

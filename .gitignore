@@ -1,2 +1,5 @@
 node_modules
 .angular/cache
+.DS_Store
+.gitignore
+NextMUI/.DS_Store
