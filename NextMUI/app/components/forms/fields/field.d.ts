@@ -1,12 +1,22 @@
-export interface IField {
+interface InputField {
   id: string;
-  label: string;
   fieldType: 'email' | 'text' | 'number' | 'password';
+  label: string;
   validator?: () => boolean;
 }
 
-export interface TextFieldProps extends IField {
+interface SelectField {
+  id: string;
+  fieldType: 'select';
+  label: string;
+  options: string[];
+  validator?: () => boolean;
+}
+
+export interface TextFieldProps extends InputField {
   variant: 'standard' | 'outlined';
 }
 
-export interface EmailFieldProps extends IField {}
+export interface EmailFieldProps extends TextFieldProps {}
+
+export type FormField = SelectField | InputField;

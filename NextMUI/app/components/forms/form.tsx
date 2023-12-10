@@ -1,10 +1,10 @@
 import { ActionPanel, FormActionProps } from './action';
 import { FieldProvider } from './fieldProvider';
-import { IField } from './fields/field';
+import { FormField } from './fields/field';
 
 type DynamicFormProps = {
   actions: FormActionProps[];
-  fields: IField[];
+  fields: FormField[];
   action: string;
   method: 'GET' | 'POST';
 };
@@ -23,7 +23,7 @@ function DynamicForm(props: DynamicFormProps) {
 }
 
 export function SignUpForm() {
-  const fields: IField[] = [
+  const fields: FormField[] = [
     {
       id: 'username',
       label: 'username',
