@@ -1,10 +1,10 @@
-import type { formController } from "../form-types";
+import type { formController, formState } from "../form-types";
 
 interface Field {
   id: string;
   label: string;
   validator?: () => boolean;
-  controller?: formController
+  formStatus?: formState;
 }
 
 

@@ -3,6 +3,7 @@ export type formState = {
   isDisabled: boolean;
   errorMsg: string;
   hasError: () => boolean;
+  fieldValues: Map<string, object>
 }
 
 export type FormProps = {
