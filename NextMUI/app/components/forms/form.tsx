@@ -6,12 +6,13 @@ import { FieldProvider } from './fieldProvider';
 import { FormField } from './fields/field';
 import { Box } from '@mui/material';
 import type { formState, FormProps, formController } from './form-types';
+import { FormContextProvider } from '@/context/formContextProvider';
 
 
 
 function DynamicForm(props: FormProps) {
 
-  const fields = FieldProvider(props.fields, formState).GetFields();
+  const fields = FieldProvider(props.fields).GetFields();
 
   const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,6 +37,14 @@ function DynamicForm(props: FormProps) {
       />
     </form>
   );
+}
+
+function Form(props: FormProps) {
+  return (
+    <FormContextProvider>
+      <DynamicForm {...props} />
+    </FormContextProvider>
+  )
 }
 
 export function SignUpForm() {
@@ -69,7 +78,7 @@ export function SignUpForm() {
   ];
 
   return (
-    <DynamicForm
+    <Form
       action='/signup'
       method='POST'
       actions={actions}

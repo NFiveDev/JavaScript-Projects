@@ -1,9 +1,6 @@
 import { formState } from "@/components/forms/form-types";
 import { Dispatch, ReactNode, createContext, useReducer } from "react";
 
-const FormContext = createContext<formState | null>(null)
-const FormDispatchContext = createContext<Dispatch<formAction> | null>(null)
-
 
 const initFormState: formState = {
   isLoading: false,
@@ -13,12 +10,12 @@ const initFormState: formState = {
   fieldValues: new Map<string, object>(),
 };
 
-type formAction = {
+export type formAction = {
   typeOfAction: formActionKind;
   actionValue?: { key: string; value: object };
 };
 
-enum formActionKind {
+export enum formActionKind {
   NOT_LOADING,
   IS_LOADING,
   ENABLE,
@@ -59,6 +56,9 @@ function formReducer(state: formState, action: formAction) {
       return state;
   }
 }
+
+export const FormContext = createContext<formState | null>(null)
+export const FormDispatchContext = createContext<Dispatch<formAction> | null>(null)
 
 export function FormContextProvider({children} : {children: ReactNode}) {
   const [formState, dispatch] = useReducer(formReducer, initFormState);

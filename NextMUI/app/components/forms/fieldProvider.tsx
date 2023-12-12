@@ -3,21 +3,21 @@ import { FormField } from './fields/field';
 import { EmailField } from './fields/emailField';
 import { formController, formState } from './form-types';
 
-export function FieldProvider(configurations: FormField[], formState: formState) {
-  let formConfiguration = [...configurations];
+export function FieldProvider(configurations: FormField[]) {
+  // let formConfiguration = [...configurations];
   const fields: JSX.Element[] = [];
 
-  function addFormState(formState: formState) {
-    return formConfiguration.map((field) => {
-      return {
-        ...field,
-        formStatus: formState
-      }
-    })
-  }
+  // function addFormState(formState: formState) {
+  //   return formConfiguration.map((field) => {
+  //     return {
+  //       ...field,
+  //       formStatus: formState
+  //     }
+  //   })
+  // }
 
   function Build() {
-    addFormState(formState).forEach((f) => {
+    configurations.forEach((f) => {
       switch (f.fieldType) {
         case 'text':
           fields.push(
