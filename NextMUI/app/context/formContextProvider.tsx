@@ -7,12 +7,12 @@ const initFormState: formState = {
   isDisabled: false,
   errorMsg: '',
   hasError: () => initFormState.errorMsg.length > 0,
-  fieldValues: new Map<string, object>(),
+  fieldValues: new Map<string, any>(),
 };
 
 export type formAction = {
   typeOfAction: formActionKind;
-  actionValue?: { key: string; value: object };
+  actionValue?: { key: string; value: any };
 };
 
 export enum formActionKind {

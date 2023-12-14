@@ -4,7 +4,6 @@ interface Field {
   id: string;
   label: string;
   validator?: () => boolean;
-  formStatus?: formState;
 }
 
 

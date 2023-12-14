@@ -11,7 +11,7 @@ const shouldContain = (input: string) => {
 };
 
 const validEmail = (input: string) => {
-  const valid = false;
+  const valid = true;
 
   return valid;
 };

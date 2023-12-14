@@ -7,7 +7,7 @@ export default function useForm() {
 
   if(!dispatch || !formState) throw new Error("You cannot use useForm hook outside formContextProvider.tsx")
 
-  const registerFieldValue = (value: {key: string, value: object}) => {
+  const registerFieldValue = (value: {key: string, value: any}) => {
     const action: formAction = {
       typeOfAction: formActionKind.SET_FIELD_VALUE,
       actionValue: value

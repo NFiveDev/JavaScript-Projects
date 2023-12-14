@@ -112,7 +112,6 @@ export default function Home() {
 
       <section
         style={{ paddingTop: 50, marginBottom: 5 }}
-        className='niklas'
       >
         <Container
           maxWidth='lg'
