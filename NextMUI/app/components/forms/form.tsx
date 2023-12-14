@@ -76,6 +76,7 @@ export function SignUpForm() {
       label: 'Sign Up!',
       isPrimary: true,
       color: 'success',
+      
     },
   ];
 
