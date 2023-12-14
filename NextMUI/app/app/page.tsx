@@ -110,70 +110,61 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ marginTop: 5, marginBottom: 5 }}>
-        <div style={{ position: 'relative' }}>
-          <Image
-            src='/home-second_banner.jpg'
-            alt='learning to code'
-            objectFit='cover'
-            fill
-            objectPosition='center'
-            style={{
-              zIndex: 0,
-            }}
-          />
-          <ImageOverlay color='rgba(30, 60, 90, 0.7)' />
-
-          <Container sx={{ padding: 10, position: 'relative' }}>
+      <section
+        style={{ paddingTop: 50, marginBottom: 5 }}
+        className='niklas'
+      >
+        <Container
+          maxWidth='lg'
+          sx={{ background: 'linear-gradient(#1e88e5, #64b5f6)', borderRadius:10, boxShadow: 3 }}
+        >
+          <Grid container paddingX={10} paddingY={10}>
             <Grid
-              container
-              sx={{ maxWidth: 'lg' }}
+              item
+              xs={12}
+              lg={7}
             >
-              <Grid
-                item
-                xs={12}
-                lg={6}
-              >
-                <Box>
-                  <Typography
-                    variant='h3'
-                    color='white'
-                  >
-                    Get a personalized Learning Experience
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                lg={5}
-                sx={{ background: 'white', borderRadius: '10px' }}
-                paddingLeft={'1.5rem'}
-                paddingRight={'1.5rem'}
-                paddingBottom={'1.5rem'}
-              >
-                <Box>
-                  <Typography
-                    paddingTop={5}
-                    marginLeft={'auto'}
-                    marginRight={'auto'}
-                    variant='h4'
-                    fontWeight={500}
-                    color={'#1e88e5'}
-                    textAlign={'left'}
-                    
-                  >
-                    Register as User
-                  </Typography>
-                </Box>
-                <Box >
-                  <SignUpForm />
-                </Box>
-                
-              </Grid>
+              <Box sx={{marginY: 'auto'}}>
+                <Typography
+                  variant='h3'
+                  color='white'
+                  fontWeight={550}
+                >
+                  Get a personalized Learning Experience
+                </Typography>
+                <Typography paddingTop={2} paddingRight={{sx: 0, lg: 20}} variant='h6' color='#b2dfdb'>
+                Unlock Your Personalized Learning Journey! Create an account today to tailor your educational experience, access customized content, and embark on a learning adventure designed just for you.
+                </Typography>
+              </Box>
             </Grid>
-          </Container>
-        </div>
+            <Grid
+              item
+              xs={12}
+              lg={5}
+              sx={{ background: 'white', borderRadius: '10px' }}
+              paddingLeft={'1.5rem'}
+              paddingRight={'1.5rem'}
+              paddingBottom={'1.5rem'}
+            >
+              <Box>
+                <Typography
+                  paddingTop={5}
+                  marginLeft={'auto'}
+                  marginRight={'auto'}
+                  variant='h4'
+                  fontWeight={500}
+                  color={'#1e88e5'}
+                  textAlign={'left'}
+                >
+                  Register as User
+                </Typography>
+              </Box>
+              <Box>
+                <SignUpForm />
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
       </section>
     </main>
   );
