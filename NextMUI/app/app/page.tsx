@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import { FeatureCard, features } from '@/components/cards/feature';
 import { ImageOverlay } from '@/components/overlays';
 import { SignUpForm } from '@/components/forms/form';
+import { LinkButton } from '@/components/link';
+import { VideoPlayer } from '@/components/VideoPlayer';
 export default function Home() {
   const sectionBottomSpace = 50;
 
@@ -69,11 +71,7 @@ export default function Home() {
               </Box>
             </div>
             <div>
-              <Image
-                src={HomeSvg}
-                width={600}
-                alt='coding'
-              />
+              <Image src={HomeSvg} width={600} alt='coding' />
             </div>
           </Stack>
         </Container>
@@ -90,12 +88,7 @@ export default function Home() {
             >
               {features?.map((item, k) => {
                 return (
-                  <Grid
-                    item
-                    key={k}
-                    xs={8}
-                    lg={6}
-                  >
+                  <Grid item key={k} xs={8} lg={6}>
                     <FeatureCard
                       title={item.title}
                       icon={item.icon}
@@ -110,59 +103,83 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        style={{ paddingTop: 50, marginBottom: 5 }}
-      >
-        <Container
-          maxWidth='xl'
-          sx={{ background: 'linear-gradient(#1e88e5, #64b5f6)', borderRadius:10, boxShadow: 3 }}
+      <section style={{ paddingTop: 50, marginBottom: 5 }}>
+        <Box
+          sx={{
+            background: 'linear-gradient(#1e88e5, #64b5f6)',
+            borderRadius: 10,
+            boxShadow: 3,
+          }}
+          maxWidth={1350}
+          marginX={'auto'}
         >
-          <Grid container paddingX={10} paddingY={10}>
-            <Grid
-              item
-              xs={12}
-              lg={7}
-            >
-              <Box sx={{marginY: 'auto'}}>
-                <Typography
-                  variant='h3'
-                  color='white'
-                  fontWeight={550}
-                >
-                  Get a personalized Learning Experience
-                </Typography>
-                <Typography paddingTop={2} paddingRight={{sx: 0, lg: 20}} variant='h6' color='#b2dfdb'>
-                Unlock Your Personalized Learning Journey! Create an account today to tailor your educational experience, access customized content, and embark on a learning adventure designed just for you.
-                </Typography>
-              </Box>
+          <Container maxWidth='lg'>
+            <Grid container paddingY={10}>
+              <Grid item xs={12} lg={7}>
+                <Box sx={{ marginY: 'auto' }}>
+                  <Typography variant='h3' color='white' fontWeight={550}>
+                    Get a personalized Learning Experience
+                  </Typography>
+                  <Typography
+                    paddingTop={2}
+                    paddingRight={{ sx: 0, lg: 20 }}
+                    variant='h6'
+                    color='#b2dfdb'
+                  >
+                    Unlock Your Personalized Learning Journey! Create an account
+                    today to tailor your educational experience, access
+                    customized content, and embark on a learning adventure
+                    designed just for you.
+                  </Typography>
+                  <Box marginTop={2}>
+                    <LinkButton
+                      buttonText='Read More'
+                      btnVariant='contained'
+                      color='secondary'
+                      href='/about'
+                      size='large'
+                    />
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                lg={5}
+                sx={{ background: 'white', borderRadius: '10px' }}
+                paddingLeft={'1.5rem'}
+                paddingRight={'1.5rem'}
+                paddingBottom={'1.5rem'}
+              >
+                <Box>
+                  <Typography
+                    paddingTop={5}
+                    marginLeft={'auto'}
+                    marginRight={'auto'}
+                    variant='h4'
+                    fontWeight={500}
+                    color={'#1e88e5'}
+                    textAlign={'left'}
+                  >
+                    Register as User
+                  </Typography>
+                </Box>
+                <Box>
+                  <SignUpForm />
+                </Box>
+              </Grid>
             </Grid>
-            <Grid
-              item
-              xs={12}
-              lg={5}
-              sx={{ background: 'white', borderRadius: '10px' }}
-              paddingLeft={'1.5rem'}
-              paddingRight={'1.5rem'}
-              paddingBottom={'1.5rem'}
-            >
-              <Box>
-                <Typography
-                  paddingTop={5}
-                  marginLeft={'auto'}
-                  marginRight={'auto'}
-                  variant='h4'
-                  fontWeight={500}
-                  color={'#1e88e5'}
-                  textAlign={'left'}
-                >
-                  Register as User
-                </Typography>
-              </Box>
-              <Box>
-                <SignUpForm />
-              </Box>
-            </Grid>
-          </Grid>
+          </Container>
+        </Box>
+      </section>
+
+      <section style={{paddingTop: 50}}>
+        <Container maxWidth={'xl'}>
+          <Box display={'flex'} justifyContent={'center'} flexDirection={'column'}>
+            <Typography variant='h2'>The Academy Introduction</Typography>
+            <VideoPlayer url='https://www.youtube.com/watch?v=TNhaISOUy6Q'/>
+          </Box>
+
         </Container>
       </section>
     </main>

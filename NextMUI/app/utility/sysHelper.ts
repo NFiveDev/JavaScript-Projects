@@ -11,8 +11,12 @@ function OsHelper() {
   }
 
   function getOperationSys() : 'win' | 'mac' | undefined {
-    if(isMacOs()) return 'mac';
-    if(isWindows()) return 'win';
+    if(navigator) {
+      if(navigator.userAgent) {
+        if(isMacOs()) return 'mac';
+        if(isWindows()) return 'win';
+      }
+    }
     return;
   }
 
