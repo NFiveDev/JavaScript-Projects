@@ -111,7 +111,7 @@ export default function Home() {
             borderRadius: 10,
             boxShadow: 3,
           }}
-          maxWidth={1350}
+          maxWidth={1400}
           marginX={'auto'}
         >
           <Container maxWidth='lg'>
@@ -174,23 +174,40 @@ export default function Home() {
         </Box>
       </section>
 
-      <section style={{paddingTop: 50}}>
+      <section style={{ paddingTop: 50 }}>
         <Container maxWidth={'xl'}>
           <Box display={'flex'} alignItems={'center'} flexDirection={'column'}>
             <Typography variant='h2'>The Academy Introduction</Typography>
             <Spacer margin={1} />
-            <VideoPlayer url='https://www.youtube.com/watch?v=TNhaISOUy6Q'/>
+            <VideoPlayer url='https://www.youtube.com/watch?v=TNhaISOUy6Q' />
           </Box>
         </Container>
       </section>
 
-      <section>
+      <section style={{ paddingTop: 50 }}>
         <Container maxWidth={'xl'}>
-          
-
+          <Box
+            sx={{
+              paddingTop: 5,
+              paddingBottom: 5,
+              paddingLeft: 5,
+              paddingRight: 10,
+              alignItems: 'center',
+              borderRadius: 10,
+              boxShadow: 3,
+            }}
+          >
+            <Stack>
+              <Typography variant='h2'>Join us on socials</Typography>
+              <Grid container>
+                <Grid item>
+                  
+                </Grid>
+              </Grid>
+            </Stack>
+          </Box>
         </Container>
       </section>
-
     </main>
   );
 }
