@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 import Typography from '@mui/material/Typography';
-import { FeatureCard, features } from '@/components/cards/feature';
+import { FeatureCard, features } from '@/components/cards';
 import { ImageOverlay } from '@/components/overlays';
 import { SignUpForm } from '@/components/forms/form';
 import { LinkButton } from '@/components/link';

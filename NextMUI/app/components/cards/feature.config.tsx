@@ -3,18 +3,9 @@ import blueprint from '../../public/feature/blueprint.svg';
 import stack from '../../public/feature/stack.svg';
 import journey from '../../public/feature/journey.svg';
 import cogwheel from '../../public/feature/cogwheel.svg';
+import type { featureProps } from './card';
 
-import { Box, Stack, Typography } from '@mui/material';
-import { BasicLink } from '../link';
-
-type featureProps = {
-  title: string;
-  icon: JSX.Element;
-  description: string;
-  link: { label?: string; href: string };
-};
-
-export const features: featureProps[] = [
+const features: featureProps[] = [
   {
     title: 'Real World Projects',
     icon: (
@@ -77,29 +68,6 @@ export const features: featureProps[] = [
   },
 ];
 
-export function FeatureCard(props: featureProps) {
-  return (
-    <Box
-      paddingRight={2}
-      paddingLeft={2}
-      maxWidth={360}
-    >
-      <Stack>
-        <Box marginBottom={2}>{props.icon}</Box>
-        <Typography
-          variant='h4'
-          fontWeight={600}
-          paddingBottom={1}
-        >
-          {props.title}
-        </Typography>
-        <Typography paddingBottom={1} fontWeight={500} color={'#616161'}>{props.description}</Typography>
-        <BasicLink
-          href={props.link.href}
-          label='Learn more'
-          withArrow={true}
-        ></BasicLink>
-      </Stack>
-    </Box>
-  );
-}
+
+export default features;
+
