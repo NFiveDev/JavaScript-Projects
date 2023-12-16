@@ -114,7 +114,7 @@ export default function Home() {
         style={{ paddingTop: 50, marginBottom: 5 }}
       >
         <Container
-          maxWidth='lg'
+          maxWidth='xl'
           sx={{ background: 'linear-gradient(#1e88e5, #64b5f6)', borderRadius:10, boxShadow: 3 }}
         >
           <Grid container paddingX={10} paddingY={10}>

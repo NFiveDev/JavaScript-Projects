@@ -9,6 +9,7 @@ import type { FormProps } from './form-types';
 import { FormContextProvider } from '@/context/formContextProvider';
 import useForm from '@/hooks/useForm';
 import { FormWarningBox } from './formWarningBox';
+import SIGN_UP_FORM_CONFIG from './configurations/signup.config';
 
 function DynamicForm(props: FormProps) {
   const fields = FieldProvider(props.fields).GetFields();
@@ -50,42 +51,10 @@ function Form(props: FormProps) {
 }
 
 export function SignUpForm() {
-  const fields: FormField[] = [
-    {
-      id: 'username',
-      label: 'Username',
-      fieldType: 'text',
-      placeholder: 'Enter a unique account name...',
-    },
-    {
-      id: 'email',
-      label: 'Email',
-      fieldType: 'email',
-      placeholder: 'Type your email address...',
-    },
-    {
-      id: 'password',
-      label: 'Password',
-      fieldType: 'password',
-      placeholder: 'Enter a secure password...',
-    },
-  ];
-
-  const actions: FormActionProps[] = [
-    {
-      label: 'Sign Up!',
-      isPrimary: true,
-      color: 'success',
-      
-    },
-  ];
-
+  const formProps = SIGN_UP_FORM_CONFIG;
   return (
     <Form
-      action='/signup'
-      method='POST'
-      actions={actions}
-      fields={fields}
+      {...formProps}
     />
   );
 }
