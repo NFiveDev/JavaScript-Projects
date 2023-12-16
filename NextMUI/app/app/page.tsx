@@ -12,6 +12,7 @@ import { ImageOverlay } from '@/components/overlays';
 import { SignUpForm } from '@/components/forms/form';
 import { LinkButton } from '@/components/link';
 import { VideoPlayer } from '@/components/VideoPlayer';
+import { Spacer } from '@/components/spacer';
 export default function Home() {
   const sectionBottomSpace = 50;
 
@@ -175,13 +176,21 @@ export default function Home() {
 
       <section style={{paddingTop: 50}}>
         <Container maxWidth={'xl'}>
-          <Box display={'flex'} justifyContent={'center'} flexDirection={'column'}>
+          <Box display={'flex'} alignItems={'center'} flexDirection={'column'}>
             <Typography variant='h2'>The Academy Introduction</Typography>
+            <Spacer margin={1} />
             <VideoPlayer url='https://www.youtube.com/watch?v=TNhaISOUy6Q'/>
           </Box>
+        </Container>
+      </section>
+
+      <section>
+        <Container maxWidth={'xl'}>
+          
 
         </Container>
       </section>
+
     </main>
   );
 }

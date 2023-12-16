@@ -4,18 +4,21 @@ import ReactPlayer from 'react-player';
 import { Box, styled } from '@mui/material';
 
 type VideoPlayerProps = {
-    url: string,
-    
+  url: string;
 };
 
-// const VideoPlayerWrapper = styled(() => {
-
-// })
+const VideoPlayerWrapper = styled(Box)({
+  paddingTop: 2,
+  paddingBottom: 2,
+});
 
 export function VideoPlayer(props: VideoPlayerProps) {
   return (
-    <Box>
-      <ReactPlayer url={props.url} width={800} height={400} />
-    </Box>
+    <ReactPlayer
+      wrapper={VideoPlayerWrapper}
+      url={props.url}
+      width={800}
+      height={400}
+    />
   );
 }
