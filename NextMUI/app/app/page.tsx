@@ -3,12 +3,12 @@ import styles from './page.module.css';
 import Container from '@mui/material/Container';
 import { Box, Grid, Stack } from '@mui/material';
 import HomeSvg from '../public/hero-image 1.svg';
+import twitchIcon from '../public/social/twitch-icon.svg';
 import Button from '@mui/material/Button';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 import Typography from '@mui/material/Typography';
-import { FeatureCard, features } from '@/components/cards';
-import { ImageOverlay } from '@/components/overlays';
+import { FeatureCard, IconCard, features } from '@/components/cards';
 import { SignUpForm } from '@/components/forms/form';
 import { LinkButton } from '@/components/link';
 import { VideoPlayer } from '@/components/VideoPlayer';
@@ -201,7 +201,20 @@ export default function Home() {
               <Typography variant='h2'>Join us on socials</Typography>
               <Grid container>
                 <Grid item>
-                  
+                  <IconCard
+                    title='twitch'
+                    icon={
+                      <Image
+                        width={32}
+                        height={32}
+                        src={twitchIcon}
+                        alt='twitch'
+                      />
+                    }
+                    text='join us at twitch'
+                    href=''
+                    wrapperSxStyle={{ bgcolor: '#d1c4e9', borderRadius: 5, border: '1px solid #512da8' }}
+                  />
                 </Grid>
               </Grid>
             </Stack>

@@ -1,7 +1,8 @@
 import { Card } from "@mui/material";
 import { Box, Stack, Typography } from '@mui/material';
 import { BasicLink } from '../link';
-import type { featureProps } from "./card";
+import type { featureProps, iconCardProps } from "./card";
+import { Spacer } from "../spacer";
 
 
 export function DefaultCard() {
@@ -12,8 +13,20 @@ export function DefaultCard() {
     )
 }
 
-export function IconCard(){
+export function IconCard(props: iconCardProps){
 
+  
+
+  return (
+    <Box padding={3} sx={props.wrapperSxStyle}>
+      <Stack alignItems={'center'} direction={'column'} textAlign={'center'}>
+        {props.icon}
+        <Spacer margin={0.2}/>
+        <Typography variant="h6">{props.title}</Typography>
+        <Typography variant="subtitle1">{props.text}</Typography>
+      </Stack>
+    </Box>
+  )
 }
 
 
