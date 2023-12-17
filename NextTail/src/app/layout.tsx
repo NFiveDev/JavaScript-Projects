@@ -3,6 +3,7 @@ import { Roboto } from 'next/font/google';
 import './globals.css';
 import NavBar from '../components/navbar';
 import Sidebar from '@/components/sidebar';
+import Provider from '@/context/providers';
 
 const roboto = Roboto({
   weight: '400',
@@ -22,15 +23,17 @@ export default function RootLayout({
   return (
     <html lang='en' className='h-full m-0'>
       <body className={roboto.className + 'min-h-full'}>
-        <div className='static md:flex flex-row'>
-          <Sidebar />
-          <div className='flex flex-col flex-grow'>
-            <header>
-              <NavBar />
-            </header>
-            <main className='bg-black text-white'>{children}</main>
+        <Provider>
+          <div className='static md:flex flex-row'>
+            <Sidebar />
+            <div className='flex flex-col flex-grow'>
+              <header>
+                <NavBar />
+              </header>
+              <main className='bg-black text-white'>{children}</main>
+            </div>
           </div>
-        </div>
+        </Provider>
       </body>
     </html>
   );

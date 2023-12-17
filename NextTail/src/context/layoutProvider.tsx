@@ -6,8 +6,8 @@ type initState = {
   sidebarOpen: boolean;
 };
 
-const LayoutContext = createContext<initState | null>(null);
-const LayoutDispatchContext = createContext<Dispatch<LayoutActionType> | null>(
+export const LayoutContext = createContext<initState | null>(null);
+export const LayoutDispatchContext = createContext<Dispatch<LayoutActionType> | null>(
   null
 );
 
@@ -26,7 +26,7 @@ const layoutReducer = (state: initState, action: LayoutActionType) => {
     case LayoutActionType.CLOSE_SIDEBAR:
       return {
         ...state,
-        sideebarOpen: false,
+        sidebarOpen: false,
       };
     default:
       throw new Error('Action not implemented');
@@ -51,16 +51,3 @@ export function LayoutContextProvider(props: {children: JSX.Element}) {
   );
 }
 
-export function useLayoutContext() {
-    const dispatch = useContext(LayoutDispatchContext);
-    const context = useContext(LayoutContext);
-
-    if(!dispatch || !context) {
-        throw new Error("Must be used inside LayoutContextProvider")
-    }
-
-    return {
-        layoutHandler: dispatch,
-        layoutState: context
-    }
-}
