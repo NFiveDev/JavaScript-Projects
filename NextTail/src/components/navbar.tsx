@@ -18,17 +18,22 @@ const DrawerToggler: FC = () => {
 
   const toggleSidebarHandler = () => {
     let nextSidebarState = oppositeSideBarState();
-    console.log("nextSidebarState: ", nextSidebarState)
+    console.log('nextSidebarState: ', nextSidebarState);
     dispatch(oppositeSideBarState());
   };
 
   return (
-    <button
-      onClick={toggleSidebarHandler}
-      className='p-1 text-emerald-400 rounded-md hover:bg-slate-500'
-    >
-      <HiBars3 size={28} />
-    </button>
+    <div>
+      {layoutState.sidebarOpen === true && <hr className='p-[19px] opacity-0' />}
+      {layoutState.sidebarOpen === false && (
+        <button
+          onClick={toggleSidebarHandler}
+          className='text-emerald-400 rounded-md hover:bg-slate-500 border-emerald-700 border p-1'
+        >
+          <HiBars3 size={28} />
+        </button>
+      )}
+    </div>
   );
 };
 

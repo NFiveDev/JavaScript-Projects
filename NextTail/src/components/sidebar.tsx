@@ -30,7 +30,7 @@ function CloseSidebarToggle() {
   return (
     <button
       onClick={sidebarCloseHandler}
-      className='text-emerald-500 font-semibold p-1 hover:bg-slate-500 h-fit my-auto rounded-lg'
+      className='text-emerald-500 font-semibold p-1 hover:bg-slate-500 h-fit my-auto rounded-lg border-emerald-700 border'
     >
       <HiChevronLeft size={25} />
     </button>
