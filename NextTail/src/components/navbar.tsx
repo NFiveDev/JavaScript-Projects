@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import useLayout from '@/hooks/useLayout';
 import { FC } from 'react';
@@ -8,20 +8,25 @@ import { LayoutActionType } from '@/context/layoutProvider';
 const DrawerToggler: FC = () => {
   const { layoutState, layoutDispatcher: dispatch } = useLayout();
 
-  const oppositeSideBarState = () => layoutState.sidebarOpen === true;
+  const oppositeSideBarState = () => {
+    if (layoutState.sidebarOpen === true) {
+      return LayoutActionType.CLOSE_SIDEBAR;
+    } else {
+      return LayoutActionType.OPEN_SIDEBAR;
+    }
+  };
 
   const toggleSidebarHandler = () => {
     let nextSidebarState = oppositeSideBarState();
-
-    if(nextSidebarState) {
-      dispatch(LayoutActionType.CLOSE_SIDEBAR)
-    } else {
-      dispatch(LayoutActionType.OPEN_SIDEBAR)
-    }
-  }
+    console.log("nextSidebarState: ", nextSidebarState)
+    dispatch(oppositeSideBarState());
+  };
 
   return (
-    <button onClick={toggleSidebarHandler} className='p-1 text-emerald-400 rounded-md hover:bg-slate-500'>
+    <button
+      onClick={toggleSidebarHandler}
+      className='p-1 text-emerald-400 rounded-md hover:bg-slate-500'
+    >
       <HiBars3 size={28} />
     </button>
   );
