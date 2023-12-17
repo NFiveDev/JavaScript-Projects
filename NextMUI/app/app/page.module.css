@@ -10,6 +10,7 @@
   padding: 4rem 0rem 4rem 0rem;
   text-align: center;
   align-items: center;
+  flex-wrap: wrap;
 
 
   @media screen and (min-width: 900px) {

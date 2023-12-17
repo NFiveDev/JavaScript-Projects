@@ -24,7 +24,16 @@ export default function Home() {
             justifyContent={{ xs: 'center' }}
             direction={{ xs: 'column', md: 'row' }}
           >
-            <div className={styles.hero_content_wrapper}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '4rem 0rem 4rem 0rem;',
+                textAlign: 'center',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+              }}
+            >
               <Typography
                 fontWeight={600}
                 variant='h2'
@@ -70,7 +79,7 @@ export default function Home() {
                   Introduction
                 </Button>
               </Box>
-            </div>
+            </Box>
             <div>
               <Image src={HomeSvg} width={600} alt='coding' />
             </div>
@@ -213,7 +222,11 @@ export default function Home() {
                     }
                     text='join us at twitch'
                     href=''
-                    wrapperSxStyle={{ bgcolor: '#d1c4e9', borderRadius: 5, border: '1px solid #512da8' }}
+                    wrapperSxStyle={{
+                      bgcolor: '#d1c4e9',
+                      borderRadius: 5,
+                      border: '1px solid #512da8',
+                    }}
                   />
                 </Grid>
               </Grid>
