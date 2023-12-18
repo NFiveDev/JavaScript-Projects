@@ -24,22 +24,17 @@ export default function RootLayout({
     <html lang='en' className='h-full m-0'>
       <body className={roboto.className + 'h-full overflow-hidden'}>
         <Provider>
-          
-            <div className='static md:flex flex-row'>
-              <Sidebar />
-              <div className='flex flex-col flex-auto '>
-                <header className=''>
-                  <NavBar />
-                </header>
-                
-                <div className='overflow-y-auto h-screen'>
+          <div className='static md:flex flex-row'>
+            <Sidebar />
+            <div className='flex flex-col flex-auto '>
+              <header className=''>
+                <NavBar />
+              </header>
+              <div className='overflow-y-auto h-screen'>
                 <main className='bg-black text-white '>{children}</main>
-
-                </div>
-                         
               </div>
             </div>
-   
+          </div>
         </Provider>
       </body>
     </html>
