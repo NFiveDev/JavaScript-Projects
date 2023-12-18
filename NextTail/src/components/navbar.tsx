@@ -60,7 +60,7 @@ const UserQuickActions = () => {
 
 const NavBar: FC = () => {
   return (
-    <div className='bg-slate-600 py-4 max-w-full px-5'>
+    <div className='bg-slate-800 py-4 max-w-full px-5'>
       <div className=''>
         <div className='flex justify-between'>
           <div>

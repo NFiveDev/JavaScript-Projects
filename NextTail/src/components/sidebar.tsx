@@ -42,7 +42,7 @@ function Sidebar() {
 
   return (
     <div
-      className={`fixed md:static bg-slate-600 top-0 bottom-0 left-0 ease-in-out duration-500 w-[250px] transition-all ${
+      className={`fixed md:static bg-slate-800 top-0 bottom-0 left-0 ease-in-out duration-500 w-[250px] transition-all ${
         layoutState.sidebarOpen ? 'ms-0' : 'ms-[-250px]'
       }`}
     >

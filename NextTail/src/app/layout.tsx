@@ -31,7 +31,7 @@ export default function RootLayout({
                 <NavBar />
               </header>
               <div className='overflow-y-auto h-screen'>
-                <main className='bg-black text-white '>{children}</main>
+                <main className='bg-slate-950 text-white '>{children}</main>
               </div>
             </div>
           </div>
