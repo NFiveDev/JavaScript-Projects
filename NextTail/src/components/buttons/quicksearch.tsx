@@ -27,7 +27,7 @@ export function OsSpecificCommandText() {
 
 export function QuickSearch() {
   return (
-    <button className="bg-slate-800 px-2 py-1 flex w-52 rounded-md text-center items-center">
+    <button className="bg-slate-800 px-2 py-1 flex w-52 rounded-md text-center items-center hover:cursor-pointer">
       <HiMagnifyingGlass size={18} className='inline-block font-medium text-blue-400' />
       <span className="text-sm font-semibold text-slate-500 ms-2">Quick search...</span>
       <span className='flex-grow'/>
