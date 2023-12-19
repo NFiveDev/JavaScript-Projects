@@ -28,7 +28,7 @@ const DrawerToggler: FC = () => {
       
         <button
           onClick={toggleSidebarHandler}
-          className='text-emerald-400 rounded-md hover:bg-slate-500 border-emerald-700 border p-1'
+          className='text-emerald-400 rounded-md hover:bg-slate-700 border-emerald-700 border p-1'
         >
           <HiBars3 size={28} />
         </button>
@@ -39,19 +39,19 @@ const DrawerToggler: FC = () => {
 
 const Notification = () => {
   return (
-    <div className='text-emerald-400 p-1 rounded-full hover:bg-slate-500 flex'>
-      <HiBell size={20} />
+    <div className='p-1 rounded-full hover:bg-slate-700 flex'>
+      <HiBell className='stroke-emerald-500 stroke-2' size={20} />
     </div>
   );
 };
 
 const UserQuickActions = () => {
   return (
-    <div className='text-emerald-400 p-1 rounded-full hover:bg-slate-500 flex items-center'>
+    <div className=' p-1 rounded-full hover:bg-slate-700 flex items-center'>
       <div className='inline-block'>
-        <HiUser size={20} />
+        <HiUser className='stroke-emerald-500 stroke-2' size={20} />
       </div>
-      <div className='inline-block'>
+      <div className='inline-block text-emerald-500'>
         <HiChevronDown />
       </div>
     </div>

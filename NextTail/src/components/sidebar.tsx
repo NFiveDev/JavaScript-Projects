@@ -95,7 +95,7 @@ function NavList() {
   ];
 
   return (
-    <div>
+    <nav>
       <ul>
         {links.map(function (link, index) {
           return (
@@ -105,7 +105,7 @@ function NavList() {
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
 }
 
@@ -113,13 +113,13 @@ function Sidebar() {
   const { layoutState } = useLayout();
 
   return (
-    <div className=''>
-      <div
-        className={`fixed lg:static top-0 bottom-0 left-0 ease-in-out duration-500 w-[260px] transition-all z-40 border-r-slate-600 flex-grow-0  ${
+    <div>
+      <div  
+        className={`fixed lg:static top-0 bottom-0 left-0 ease-in-out duration-500 w-[260px] transition-all z-40 flex-grow-0  ${
           layoutState.sidebarOpen ? 'ms-0' : 'ms-[-260px]'
         }`}
       >
-        <div className='fixed bg-slate-900 h-screen border-r-slate-700 border-r-2'>
+        <div style={{borderRight: '1px solid #1e293b'}} className='fixed bg-slate-900 h-screen'>
           <div className='flex flex-row'>
             <NavLogo />
             <CloseSidebarToggle />
