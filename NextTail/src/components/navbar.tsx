@@ -60,8 +60,8 @@ const UserQuickActions = () => {
 
 const NavBar: FC = () => {
   return (
-    <div className=''>
-      <div className='py-4 px-4'>
+    <div className='bg-slate-950'>
+      <div className='py-2 px-4'>
         <div className='flex w-full justify-between'>
           <div>
             <DrawerToggler />

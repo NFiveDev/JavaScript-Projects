@@ -23,7 +23,9 @@ function NavLogo() {
           height={32}
           alt='home logo'
         />
-        <h3 className='text-xl font-base text-slate-400 flex-shrink-0'>Dev Academy</h3>
+        <h3 className='text-xl font-base text-slate-400 flex-shrink-0'>
+          Dev Academy
+        </h3>
       </div>
     </div>
   );
@@ -117,16 +119,15 @@ function Sidebar() {
       }`}
     >
       <div className='fixed bg-slate-800 h-screen '>
-      <div className='flex flex-row'>
-        <NavLogo />
-        <CloseSidebarToggle />
+        <div className='flex flex-row'>
+          <NavLogo />
+          <CloseSidebarToggle />
+        </div>
+        <LineDivier />
+        <div>
+          <NavList />
+        </div>
       </div>
-      <LineDivier />
-      <div>
-        <NavList />
-      </div>
-      </div>
-      
     </div>
   );
 }
