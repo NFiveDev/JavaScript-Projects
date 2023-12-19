@@ -24,15 +24,15 @@ const DrawerToggler: FC = () => {
 
   return (
     <div>
-      {layoutState.sidebarOpen === true && <hr className='p-[19px] opacity-0' />}
-      {layoutState.sidebarOpen === false && (
+      
+      
         <button
           onClick={toggleSidebarHandler}
           className='text-emerald-400 rounded-md hover:bg-slate-500 border-emerald-700 border p-1'
         >
           <HiBars3 size={28} />
         </button>
-      )}
+      
     </div>
   );
 };
@@ -60,9 +60,9 @@ const UserQuickActions = () => {
 
 const NavBar: FC = () => {
   return (
-    <div className='bg-slate-800 py-4 max-w-full px-5'>
-      <div className=''>
-        <div className='flex justify-between'>
+    <div className=''>
+      <div className='py-4 px-4'>
+        <div className='flex w-full justify-between'>
           <div>
             <DrawerToggler />
           </div>
