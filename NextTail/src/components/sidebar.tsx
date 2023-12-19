@@ -113,19 +113,21 @@ function Sidebar() {
   const { layoutState } = useLayout();
 
   return (
-    <div
-      className={`fixed lg:static  top-0 bottom-0 left-0 ease-in-out duration-500 w-[260px] transition-all z-40 ${
-        layoutState.sidebarOpen ? 'ms-0' : 'ms-[-260px]'
-      }`}
-    >
-      <div className='fixed bg-slate-800 h-screen '>
-        <div className='flex flex-row'>
-          <NavLogo />
-          <CloseSidebarToggle />
-        </div>
-        <LineDivier />
-        <div>
-          <NavList />
+    <div className=''>
+      <div
+        className={`fixed lg:static top-0 bottom-0 left-0 ease-in-out duration-500 w-[260px] transition-all z-40 border-r-slate-600 flex-grow-0  ${
+          layoutState.sidebarOpen ? 'ms-0' : 'ms-[-260px]'
+        }`}
+      >
+        <div className='fixed bg-slate-900 h-screen border-r-slate-700 border-r-2'>
+          <div className='flex flex-row'>
+            <NavLogo />
+            <CloseSidebarToggle />
+          </div>
+          <LineDivier />
+          <div>
+            <NavList />
+          </div>
         </div>
       </div>
     </div>

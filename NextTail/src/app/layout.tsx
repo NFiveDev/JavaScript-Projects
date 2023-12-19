@@ -25,20 +25,14 @@ export default function RootLayout({
       <body className={roboto.className + 'min-h-screen bg-slate-950'}>
         <Provider>
           <div className='flex'>
-            <div className=''>
             <Sidebar />
-            </div>
-            
+
             <div className='flex flex-col w-full'>
               <header className='sticky top-0 z-10'>
                 <NavBar />
               </header>
-              <div className=''>
-              <main className=' text-white'>
-                {children}
-              </main>
-              </div>
-              
+
+              <main className=' text-white'>{children}</main>
             </div>
           </div>
         </Provider>
