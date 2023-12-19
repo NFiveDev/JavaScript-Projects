@@ -5,22 +5,29 @@ type ButtonProps = {
   asLink?: boolean;
   content: JSX.Element;
   href?: string;
-  execute: () => void;
-  colorScheme: string;
+  execute?: () => void;
+  colorScheme: 'primary' | 'secondary';
   size: 'sm' | 'md' | 'lg';
+  outline?: boolean;
 }
 
 export function Button(props: ButtonProps) {
-  if(props.asLink) {
+
+  const onClickHandler = () => {
+    if (!props.execute) return;
+    props.execute();
+  }
+
+  if (props.asLink) {
     return (
       <Link href={props.href ? props.href : '#'}>
-        <button></button>
+        <button onClick={onClickHandler}></button>
       </Link>
     )
   }
 
   return (
-    <button></button>
+    <button onClick={onClickHandler}></button>
   )
 
 
