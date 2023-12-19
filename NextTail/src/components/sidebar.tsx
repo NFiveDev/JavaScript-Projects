@@ -12,6 +12,7 @@ import {
 } from 'react-icons/hi2';
 import Link from 'next/link';
 import { LineDivier } from './divider';
+import { QuickSearch } from './buttons/quicksearch';
 
 function NavLogo() {
   return (
@@ -125,6 +126,9 @@ function Sidebar() {
             <CloseSidebarToggle />
           </div>
           <LineDivier />
+          <div className='py-2'>
+            <QuickSearch />
+          </div>
           <div>
             <NavList />
           </div>
