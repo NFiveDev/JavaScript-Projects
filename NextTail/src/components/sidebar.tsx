@@ -126,7 +126,7 @@ function Sidebar() {
             <CloseSidebarToggle />
           </div>
           <LineDivier />
-          <div className='py-2'>
+          <div className='py-2 justify-center flex my-1'>
             <QuickSearch />
           </div>
           <div>

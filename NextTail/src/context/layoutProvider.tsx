@@ -34,17 +34,17 @@ const layoutReducer = (state: initState, action: LayoutActionType) => {
 };
 
 const initialState: initState = {
-  sidebarOpen: false,
+  sidebarOpen: true,
 };
 
 export function LayoutContextProvider(props: {children: JSX.Element}) {
   const [hasInit, setHasInit] = useState(false)
   const [state, dispatch] = useReducer(layoutReducer, initialState);
 
-  if(!hasInit && window.innerWidth > 1000) {
-    dispatch(LayoutActionType.OPEN_SIDEBAR);
-    setHasInit(true);
-  } 
+  // if(!hasInit && window.innerWidth < 1000) {
+  //   dispatch(LayoutActionType.OPEN_SIDEBAR);
+  //   setHasInit(false);
+  // } 
 
   return (
     <LayoutContext.Provider value={state}>
