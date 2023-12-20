@@ -1,14 +1,14 @@
 'use client'
 
 import Link from 'next/link';
-import { ConstructTailwindClassString } from './styles';
+import { ConstructTailwindClassString, GetBackground, colorKey } from './styles';
 
 type ButtonProps = {
   asLink?: boolean;
   children: JSX.Element;
   href?: string;
   execute?: () => void;
-  colorScheme: 'emerald' | 'green';
+  colorScheme: colorKey;
   size: 'sm' | 'md' | 'lg';
   outline?: boolean;
   disabled?: boolean;
@@ -25,7 +25,7 @@ const defaultButtonProps: ButtonProps = {
 
 function buttonStylesBuilder(
   size: string,
-  colorScheme: string,
+  colorScheme: colorKey,
   outline = false
 ) {
   let styledClass: string[] = [];
@@ -33,6 +33,7 @@ function buttonStylesBuilder(
   if (outline) {
 
   } else {
+    styledClass.push(GetBackground(colorScheme));
 
   }
 
