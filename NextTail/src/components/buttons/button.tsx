@@ -1,34 +1,79 @@
-import Link from "next/link";
+'use client'
 
+import Link from 'next/link';
 
 type ButtonProps = {
   asLink?: boolean;
-  content: JSX.Element;
+  children: JSX.Element;
   href?: string;
   execute?: () => void;
-  colorScheme: 'primary' | 'secondary';
+  colorScheme: 'emerald' | 'green';
   size: 'sm' | 'md' | 'lg';
   outline?: boolean;
+  disabled?: boolean;
+  type?: 'button' | 'submit';
+};
+
+const defaultButtonProps: ButtonProps = {
+  asLink: false,
+  children: <p>button</p>,
+  size: 'md',
+  disabled: false,
+  colorScheme: 'emerald',
+};
+
+
+class buttonStylesBuilder {
+  
+}
+
+function buttonStylesBuilder(
+  size: string,
+  colorScheme: string,
+  outline = false
+) {
+  let styledClass = '';
+
+
+  if (outline) {
+  } else {
+  }
+
+  return styledClass;
 }
 
 export function Button(props: ButtonProps) {
+  const propsWithDefault = {
+    ...defaultButtonProps,
+    ...props,
+  };
+
+  const btnTailwindClass = buttonStylesBuilder(defaultButtonProps.size, defaultButtonProps.colorScheme, defaultButtonProps.outline)
 
   const onClickHandler = () => {
     if (!props.execute) return;
     props.execute();
-  }
+  };
 
   if (props.asLink) {
     return (
       <Link href={props.href ? props.href : '#'}>
-        <button onClick={onClickHandler}></button>
+        <button
+          className={btnTailwindClass}
+          type={propsWithDefault.type}
+          disabled={propsWithDefault.disabled}
+          onClick={onClickHandler}
+        >{defaultButtonProps.children}</button>
       </Link>
-    )
+    );
   }
 
   return (
-    <button onClick={onClickHandler}></button>
-  )
-
-
+    <button
+      className={btnTailwindClass}
+      type={propsWithDefault.type}
+      disabled={propsWithDefault.disabled}
+      onClick={onClickHandler}
+    >{defaultButtonProps.children}</button>
+  );
 }

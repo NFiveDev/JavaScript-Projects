@@ -1,3 +1,4 @@
+import { Button } from '@/components/buttons/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiArrowRightCircle } from 'react-icons/hi2';
@@ -17,7 +18,7 @@ export default function Home() {
           </Link>
 
           <div className='my-4 px-10'>
-            <h1 className='text-7xl font-bold bg-gradient-to-r from-emerald-600 to-purple-600 inline-block text-transparent bg-clip-text'>
+            <h1 className='text-7xl font-bold bg-gradient-to-r from-emerald-500 to-teal-500 inline-block text-transparent bg-clip-text'>
               Learn Real-World Skills, Build Your Path -
               Succeed Today!
             </h1>
@@ -25,7 +26,7 @@ export default function Home() {
           </div>
 
           <div className='flex'>
-            
+            <Button size='md' colorScheme='emerald' asLink href='/course'><span className='text-white'>Start Journey</span></Button>
           </div>
 
         </div>
