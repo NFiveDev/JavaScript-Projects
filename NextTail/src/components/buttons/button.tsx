@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link';
+import { ConstructTailwindClassString } from './styles';
 
 type ButtonProps = {
   asLink?: boolean;
@@ -22,24 +23,20 @@ const defaultButtonProps: ButtonProps = {
   colorScheme: 'emerald',
 };
 
-
-class buttonStylesBuilder {
-  
-}
-
 function buttonStylesBuilder(
   size: string,
   colorScheme: string,
   outline = false
 ) {
-  let styledClass = '';
-
+  let styledClass: string[] = [];
 
   if (outline) {
+
   } else {
+
   }
 
-  return styledClass;
+  return ConstructTailwindClassString(styledClass);
 }
 
 export function Button(props: ButtonProps) {
