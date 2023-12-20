@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link';
-import { ConstructTailwindClassString, GetBackground, colorKey } from './styles';
+import { ConstructTailwindClassString, GetBackground, GetTextStyles, btnSize, colorKey } from './styles';
 
 type ButtonProps = {
   asLink?: boolean;
@@ -24,7 +24,7 @@ const defaultButtonProps: ButtonProps = {
 };
 
 function buttonStylesBuilder(
-  size: string,
+  size: btnSize,
   colorScheme: colorKey,
   outline = false
 ) {
@@ -36,6 +36,8 @@ function buttonStylesBuilder(
     styledClass.push(GetBackground(colorScheme));
 
   }
+  styledClass.push('rounded-lg');
+  styledClass.push(GetTextStyles(size));
 
   return ConstructTailwindClassString(styledClass);
 }

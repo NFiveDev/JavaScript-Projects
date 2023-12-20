@@ -14,6 +14,12 @@ const tailwindBackgroundMap = new Map<string, string>([
 export const GetBackground = (key: colorKey) => tailwindBackgroundMap.get(key) || 'bg-emerald-600';
 
 export const GetTextStyles = (size: btnSize) => {
+  if(size === 'sm') return 'font-semibold text-sm';
+  if(size === 'lg') return 'font-semibold text-xl';
+  return 'font-semibold text-lg'; // else it must be medium
+}
+
+export const GetSizeStyles = (size: btnSize) => {
 
 }
 
